@@ -1,0 +1,56 @@
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 110"  xml:space="preserve">
+	<style type="text/css">
+		polygon { fill:url(#default-gradient) }
+	</style>
+	<g>
+		<polygon points="0,109.9 25.2,84.6 0,59.4 	" />
+	</g>
+	<g>
+		<polygon points="0,0.1 0,55 0,55 54.9,109.9 54.9,55 54.9,55 	"/>
+	</g>
+	<g>
+		<polygon points="58,55 113,110 113,0 	"/>
+	</g>
+	<g>
+		<polygon points="125.4,70.3 160.5,35.2 125.4,0.1 	"/>
+	</g>
+	<g>
+		<polygon points="125.4,74.8 160.5,109.9 160.5,39.7 	"/>
+	</g>
+	<g>
+		<polygon points="172.5,109.9 223.5,109.9 198,84.4 	"/>
+	</g>
+	<g>
+		<polygon points="173,0.1 173,55 173,55 227.9,109.9 227.9,55 227.9,55 	"/>
+	</g>
+	<g>
+		<polygon points="177.5,0.1 203,25.6 228.5,0.1 	"/>
+	</g>
+	<g>
+		<polygon points="239.9,109.9 290.9,109.9 265.4,84.4 	"/>
+	</g>
+	<g>
+		<polygon points="240.4,0.1 240.4,55 240.4,55 295.3,109.9 295.3,55 295.3,55 	"/>
+	</g>
+	<g>
+		<polygon points="244.9,0.1 270.4,25.6 295.9,0.1 	"/>
+	</g>
+	<g>
+		<polygon points="307.7,70.3 342.7,35.2 307.7,0.1 	"/>
+	</g>
+	<g>
+		<polygon points="307.7,74.8 342.7,109.9 342.7,39.7 	"/>
+	</g>
+	<g>
+		<polygon points="355.2,68.7 369,55 355.2,41.2 	"/>
+	</g>
+	<g>
+		<polygon points="372.1,55 427.1,110 427.1,0 	"/>
+	</g>
+	<defs>
+		<linearGradient id="default-gradient">
+			<stop offset="0%" stop-color="#de0100" class="linear-gradient-start"/>
+			<stop offset="100%" stop-color="#eb6012" class="linear-gradient-end"/>
+		</linearGradient>
+	</defs>
+</svg>
