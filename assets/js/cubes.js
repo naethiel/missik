@@ -130,7 +130,7 @@ function render() {
 		plane.children.forEach( function ( cube ) {
 			var distanceToImpact = cube.getWorldPosition().distanceTo( impactPoint );
 			if ( distanceToImpact > 400 )
-				distanceToImpact = 400;
+			distanceToImpact = 400;
 
 
 			cube.scale.x = Math.sqrt( distanceToImpact / 400 );

@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+{{ partial "head.html" . }}
 
 <header>
 	<div id="webgl-background"></div>
@@ -8,5 +8,20 @@
 	</div>
 	<a href="#" id="scroll-down-icon" class="">Scroll down</a>
 </header>
-
+<nav class="navbar navbar-full navbar-dark bg-faded bg-inverse">
+	<button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+		&#9776;
+	</button>
+	<div class="collapse navbar-toggleable-sm" id="main-navbar">
+		<a class="navbar-brand" href="#">{M}</a>
+		<ul class="nav navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Travaux<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Contact</a>
+			</li>
+		</ul>
+	</div>
+</nav>
 {{ partial "footer.html" . }}
