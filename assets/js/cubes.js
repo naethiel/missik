@@ -1,4 +1,4 @@
-console.log("the cubes file loads correct !");
+console.log("the cubes file loads correct !");5
 // initialization
 var scene = new THREE.Scene();
 
@@ -13,7 +13,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 
 // actually add it to the DOM
 var div = document.getElementById("webgl-background");
-// div.appendChild( renderer.domElement );
+div.appendChild( renderer.domElement );
 
 /* ------------------------------------------------------- */
 // Adding window resize support
@@ -46,14 +46,14 @@ function onDocumentMouseMove( event ) {
 /* ------------------------------------------------------- */
 
 // create a light
-var light = new THREE.DirectionalLight( 0x404040);
+var light = new THREE.DirectionalLight( 0x3d3d3d);
 light.position.set( camera.position.x, camera.position.y, camera.position.z ).normalize();
 
 // add it to the scene
 scene.add(light);
 
 var ambientLight = new THREE.AmbientLight( 0xffffff );
-ambientLight.intensity = 0.3
+ambientLight.intensity = 0.25
 scene.add(ambientLight);
 
 /* ------------------------------------------------------- */

@@ -2,3 +2,42 @@
 //
 // Copy variables from `_variables.scss` to this file to override default values
 // without modifying source files.
+
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+$brand-primary:             #de0100;
+$brand-secondary:           #eb6012;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-flex:               true;
+$enable-rounded:            false;
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:    #404040;
+$body-color: $gray-lighter;
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:            $brand-primary;
+$link-hover-color:      $brand-secondary;
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: "Raleway", "Helvetica Neue", Arial, sans-serif;
+$font-family-base:       $font-family-sans-serif;
