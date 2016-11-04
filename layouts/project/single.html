@@ -1,0 +1,10 @@
+{{ partial "head.html" . }}
+
+<pre>single project page</pre>
+<h1>{{ .Title }}</h1>
+<pre>{{ .Params.year }} | {{ .Params.category }}</pre>
+<p>
+	{{ .Content }}
+</p>
+
+{{ partial "footer.html" . }}

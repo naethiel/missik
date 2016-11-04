@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{{ .Hugo.Generator }}
 		<title>{{ .Site.Title }}</title>
+		<base href="{{ .Site.BaseURL }}">
 
+		<link rel="canonical" href="{{ .Permalink }}">
 		<link rel="stylesheet" href="css/main.css" media="screen" type="text/css">
 	</head>
 	<body>

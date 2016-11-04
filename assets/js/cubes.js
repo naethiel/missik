@@ -33,6 +33,32 @@ var impactPoint;
 // adding window tilt !
 window.addEventListener( 'mousemove', onDocumentMouseMove, false );
 document.addEventListener( 'mouseover', onDocumentMouseMove, false );
+document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+function onDocumentTouchStart( event ) {
+	if ( event.touches.length == 1 ) {
+		//event.preventDefault();
+
+		mouseX = ( event.touches[0].pageX - (window.innerWidth / 2) ) / 10;
+		mouseY = ( event.touches[0].pageY - (window.innerWidth / 2) ) / 10;
+
+		mouse.x = ( event.touches[0].pageX / window.innerWidth ) * 2 - 1;
+		mouse.y = - ( event.touches[0].pageY / window.innerHeight ) * 2 + 1;
+	}
+}
+
+function onDocumentTouchMove( event ) {
+	if ( event.touches.length == 1 ) {
+		//event.preventDefault();
+
+		mouseX = ( event.touches[0].pageX - (window.innerWidth / 2) ) / 10;
+		mouseY = ( event.touches[0].pageY - (window.innerWidth / 2) ) / 10;
+
+		mouse.x = ( event.touches[0].pageX / window.innerWidth ) * 2 - 1;
+		mouse.y = - ( event.touches[0].pageY / window.innerHeight ) * 2 + 1;
+	}
+}
 
 function onDocumentMouseMove( event ) {
 	mouseX = ( event.clientX - window.innerWidth / 2 ) / 10; // [ -innerWidth/ 4, +innerWidth/ 4 ]
@@ -138,8 +164,6 @@ function render() {
 			cube.scale.z = Math.sqrt( distanceToImpact / 400 );
 		} );
 
-	} else { // ray intersects nothing.
-		// do stuff
 	}
 
 	light.position.x = mouse.x;
