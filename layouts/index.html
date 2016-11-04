@@ -6,11 +6,11 @@
 		{{ partial "logo.svg" }}
 		<div id="name">Nicolas Missika</div>
 	</div>
-	<a href="#" id="scroll-down-icon" class="">Scroll down</a>
+	<a href="#main" id="scroll-down-icon" class="">Scroll down</a>
 </header>
 
 {{ partial "nav.partial.html" . }}
-<main>
+<main id="main">
 	<section class="projects-list">
 		{{ range .Data.Pages }}
 			{{ .Render "li" }}
