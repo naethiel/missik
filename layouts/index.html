@@ -12,9 +12,33 @@
 {{ partial "nav.partial.html" . }}
 <main id="main">
 	<section class="projects-list">
-		{{ range .Data.Pages }}
-			{{ .Render "li" }}
-		{{ end }}
+		<div class="carousel slide" id="projects-carousel" data-ride="carousel">
+			<div class="carousel-inner" role="listbox">
+				{{ range $index, $page := .Data.Pages }}
+					{{ $page.Render "li" }}
+				{{ end }}
+			</div>
+		</div>
+		<div class="carousel-controls">
+			<a href="#projects-carousel" role="button" data-slide="prev">Previous</a>
+			{{ range $index, $item := .Data.Pages }}
+			<a href="#projects-carousel" role="button" data-slide-to="{{ $index }}" class="{{ if eq $index 0 }}active{{ end }}">{{ add $index 1 }}</a>
+			{{ end }}
+			<a href="#projects-carousel" role="button" data-slide="next">Next</a>
+		</div>
+	</section>
+	<section class="projects-details">
+	{{ range $index, $project := .Data.Pages }}
+		<article class="project">
+			<header style="background-image:url('images/{{ .Params.display }}')">
+				<h1>{{ .Title }}</h1>
+				<h5>{{ .Params.year }}</h5>
+			</header>
+			<section>
+				{{ .Content }}
+			</section>
+		</article>
+	{{ end }}
 	</section>
 </main>
 {{ partial "footer.html" . }}

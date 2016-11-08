@@ -3,3 +3,9 @@
 @import "landing";
 @import "nav";
 @import "projects-list";
+@import "project-details";
+
+main {
+	@include make-container();
+	max-width: 90rem;
+}

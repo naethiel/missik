@@ -1,8 +1,10 @@
 +++
 title = "Second project"
+type = "project"
 year = "2015"
 category = "web"
 display = "image2.jpg"
+priority = 1
 +++
 
 ## Big title

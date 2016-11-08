@@ -1,0 +1,18 @@
+.projects-details {
+	article.project {
+		@include make-row();
+
+		header {
+			@include make-col-ready();
+			@include make-col(12);
+
+			background-position: center;
+			background-size: cover;
+		}
+
+		section {
+			@include make-col-ready();
+			@include make-col(12);
+		}
+	}
+}

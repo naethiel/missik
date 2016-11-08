@@ -1,8 +1,10 @@
 +++
 title = "Last one !"
+type = "project"
 year = "2012"
 category = "motion"
 display = "image2.jpg"
+priority = 3
 +++
 
 ## Big title

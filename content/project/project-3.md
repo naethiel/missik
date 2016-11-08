@@ -1,8 +1,10 @@
 +++
 title = "3rd project with some long title"
+type = "project"
 year = "2014"
 category = "print"
 display = "image1.jpg"
+priority = 2
 +++
 
 ## Big title in content here

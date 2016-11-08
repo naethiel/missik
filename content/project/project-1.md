@@ -1,8 +1,10 @@
 +++
 title = "Project title in TOML"
+type = "project"
 year = "2015"
 category = "web"
 display = "image1.jpg"
+priority = 0
 +++
 
 ## Big title in content here
