@@ -19,13 +19,15 @@
 				{{ end }}
 			</div>
 		</div>
-		<div class="carousel-controls">
+		<nav class="carousel-controls">
 			<a href="#projects-carousel" role="button" data-slide="prev">Previous</a>
-			{{ range $index, $item := .Data.Pages }}
-			<a href="#projects-carousel" role="button" data-slide-to="{{ $index }}" class="{{ if eq $index 0 }}active{{ end }}">{{ add $index 1 }}</a>
-			{{ end }}
+			<ul>
+				{{ range $index, $item := .Data.Pages }}
+				<li><a href="#projects-carousel" role="button" data-slide-to="{{ $index }}" class="{{ if eq $index 0 }}active{{ end }}">{{ add $index 1 }}</a></li>
+				{{ end }}
+			</ul>
 			<a href="#projects-carousel" role="button" data-slide="next">Next</a>
-		</div>
+		</nav>
 	</section>
 	<section class="projects-details">
 	{{ range $index, $project := .Data.Pages }}
@@ -40,5 +42,8 @@
 		</article>
 	{{ end }}
 	</section>
+	<footer>
+
+	</footer>
 </main>
 {{ partial "footer.html" . }}

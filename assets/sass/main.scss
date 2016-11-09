@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700';
+@import 'https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700';
 @import "bootstrap";
 @import "landing";
 @import "nav";
@@ -8,4 +8,6 @@
 main {
 	@include make-container();
 	max-width: 90rem;
+	padding-top: $spacer*4;
+	padding-bottom: $spacer*4;
 }

@@ -1,4 +1,5 @@
 	<article class="carousel-item {{ if eq .Params.priority 0 }} active {{ end }}" style="background-image: url('images/{{ .Params.display }}');">
-		<h1>{{ .Title }}</h1>
-		<a href="{{ .Permalink }}">Open project</a>
+		<a href="{{ .Permalink }}">
+			<h1>{{ .Title }}</h1>
+		</a>
 	</article>
