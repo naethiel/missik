@@ -9,11 +9,16 @@
 
 			padding-top: $spacer*4;
 			padding-bottom: $spacer*4;
+			
+			min-height: 35vh;
 			background-position: center;
 			background-size: cover;
-
+			display: flex;
+			flex-flow: column;
+			flex-wrap: nowrap;
+			justify-content: flex-end;
 			text-shadow: 0 0 15px rgba(0,0,0,0.6);
-			
+
 			margin-bottom: $spacer*2;
 
 			h1 {
