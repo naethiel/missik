@@ -9,7 +9,7 @@ $(document).ready(function(){
 		// loop: "true",
 		duration: 1000,
 		rotate: function(el, index){
-			if (index % 2 == 0) {
+			if (index % 2 === 0) {
 				return ["45deg", "0deg"];
 			} else {
 				return ["-45deg", "0deg"];

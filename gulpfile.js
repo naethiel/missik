@@ -12,7 +12,7 @@ var path = {
 		'sass' : './assets/sass/',
 		'js' : './assets/js/'
 	},
-	'vendors' : './bower_components/',
+	'vendors' : './node_modules/',
 	'static' : {
 		'css' : './static/css/',
 		'maps' : './static/maps/',
@@ -33,7 +33,7 @@ gulp.task('styles', function(){
 gulp.task('vendors', function(){
 	gulp.src([
 		path.vendors + 'jquery/dist/jquery.js',
-		path.vendors + 'threejs/build/three.js',
+		path.vendors + 'three/build/three.js',
 		path.vendors + 'animejs/anime.js',
 		path.vendors + 'tether/dist/js/tether.js',
 		path.vendors + 'bootstrap/dist/js/bootstrap.js'
