@@ -14,9 +14,7 @@
 	<section class="projects-list">
 		<div class="carousel slide" id="projects-carousel" data-ride="carousel">
 			<div class="carousel-inner" role="listbox">
-				{{ range $index, $page := .Data.Pages }}
-					{{ $page.Render "li" }}
-				{{ end }}
+				{{ range $index, $page := .Data.Pages }} {{ $page.Render "li" }} {{ end }}
 			</div>
 		</div>
 		<nav class="carousel-controls">
@@ -30,7 +28,7 @@
 		</nav>
 	</section>
 	<section class="projects-details">
-	{{ range $index, $project := .Data.Pages }}
+		{{ range $index, $project := .Data.Pages }}
 		<article class="project">
 			<header style="background-image:url('images/{{ .Params.display }}')">
 				<h1>{{ .Title }}</h1>
@@ -40,7 +38,7 @@
 				{{ .Content }}
 			</section>
 		</article>
-	{{ end }}
+		{{ end }}
 	</section>
 	<footer>
 
