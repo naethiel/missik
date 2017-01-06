@@ -11,13 +11,20 @@
 $brand-primary:             #de0100;
 $brand-secondary:           #eb6012;
 
+$gray-darker:               #1a1a1a;
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
 $enable-flex:               true;
 $enable-rounded:            false;
-
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        true;
+$enable-hover-media-query:  false !default;
+$enable-grid-classes:       true !default;
+$enable-print-styles:       true !default;
 
 // Body
 //
@@ -25,6 +32,19 @@ $enable-rounded:            false;
 
 $body-bg:    #404040;
 $body-color: $gray-lighter;
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer-xs: $spacer / 4;
+$spacer-sm: $spacer / 2;
+$spacer:   1rem;
+$spacer-lg: $spacer * 2;
+$spacer-xl: $spacer * 4;
 
 
 // Links
@@ -100,3 +120,60 @@ $kbd-box-shadow:         inset 0 -.1rem 0 rgba(0,0,0,.25) !default;
 $nested-kbd-font-weight: bold !default;
 
 $list-inline-padding: 5px !default;
+
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-padding-x:                  1rem !default;
+$btn-padding-y:                  .5rem !default;
+$btn-line-height:                1.25 !default;
+$btn-font-weight:                normal !default;
+$btn-box-shadow:                 inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075) !default;
+$btn-active-box-shadow:          inset 0 3px 5px rgba(0,0,0,.125) !default;
+
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             $btn-primary-bg;
+
+$btn-secondary-color:            $brand-secondary;
+$btn-secondary-bg:               #fff !default;
+$btn-secondary-border:           $brand-secondary;
+
+$btn-info-color:                 #fff !default;
+$btn-info-bg:                    $brand-info !default;
+$btn-info-border:                $btn-info-bg !default;
+
+$btn-success-color:              #fff !default;
+$btn-success-bg:                 $brand-success !default;
+$btn-success-border:             $btn-success-bg !default;
+
+$btn-warning-color:              #fff !default;
+$btn-warning-bg:                 $brand-warning !default;
+$btn-warning-border:             $btn-warning-bg !default;
+
+$btn-danger-color:               #fff !default;
+$btn-danger-bg:                  $brand-danger !default;
+$btn-danger-border:              $btn-danger-bg !default;
+
+$btn-link-disabled-color:        $gray-light !default;
+
+$btn-padding-x-sm:               .5rem !default;
+$btn-padding-y-sm:               .25rem !default;
+
+$btn-padding-x-lg:               1.5rem !default;
+$btn-padding-y-lg:               .75rem !default;
+
+$btn-block-spacing-y:            .5rem !default;
+$btn-toolbar-margin:             .5rem !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:              $border-radius !default;
+$btn-border-radius-lg:           $border-radius-lg !default;
+$btn-border-radius-sm:           $border-radius-sm !default;
+
+
+
+

@@ -1,47 +1,21 @@
-{{ partial "head.html" . }}
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		{{ partial "head.partial.html" . }}
+	</head>
+	<body>
+		{{ partial "landing.partial.html" . }}
+		
+		{{ partial "nav.partial.html" . }}
 
-<header>
-	<div id="webgl-background"></div>
-	<div id="logo">
-		{{ partial "logo.svg" }}
-		<div id="name">Nicolas Missika</div>
-	</div>
-	<a href="#main" id="scroll-down-icon" class="">Scroll down</a>
-</header>
+		{{ partial "about.partial.html" . }}
 
-{{ partial "nav.partial.html" . }}
-<main id="main">
-	<section class="projects-list">
-		<div class="carousel slide" id="projects-carousel" data-ride="carousel">
-			<div class="carousel-inner" role="listbox">
-				{{ range $index, $page := .Data.Pages }} {{ $page.Render "li" }} {{ end }}
-			</div>
-		</div>
-		<nav class="carousel-controls">
-			<a href="#projects-carousel" role="button" data-slide="prev">Previous</a>
-			<ul>
-				{{ range $index, $item := .Data.Pages }}
-				<li><a href="#projects-carousel" role="button" data-slide-to="{{ $index }}" class="{{ if eq $index 0 }}active{{ end }}">{{ add $index 1 }}</a></li>
-				{{ end }}
-			</ul>
-			<a href="#projects-carousel" role="button" data-slide="next">Next</a>
-		</nav>
-	</section>
-	<section class="projects-details">
-		{{ range $index, $project := .Data.Pages }}
-		<article class="project">
-			<header style="background-image:url('images/{{ .Params.display }}')">
-				<h1>{{ .Title }}</h1>
-				<h5>{{ .Params.year }}</h5>
-			</header>
-			<section>
-				{{ .Content }}
-			</section>
-		</article>
-		{{ end }}
-	</section>
-	<footer>
+		{{ partial "projects.partial.html" . }}
 
-	</footer>
-</main>
-{{ partial "footer.html" . }}
+		{{ partial "contact.partial.html" . }}
+
+		{{ partial "footer.partial.html" . }}
+		<script src="js/vendors.js"></script>
+		<script src="js/app.js"></script>
+    </body>
+</html>

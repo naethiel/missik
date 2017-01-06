@@ -1,0 +1,20 @@
+#projects {
+	padding: $spacer-xl 0;
+	
+	article {
+		background: $gray-darker;
+		padding: $spacer;
+		margin-bottom: $spacer-lg;
+		
+		figure {
+			margin-top: - $spacer;
+			margin-left: - $spacer;
+			margin-right: - $spacer;
+		}
+	}
+	
+	.more {
+		@extend .btn;
+		@extend .btn-primary;
+	}
+}

@@ -2,12 +2,6 @@
 @import "bootstrap";
 @import "landing";
 @import "nav";
-@import "projects-list";
-@import "project-details";
-
-main {
-	@include make-container();
-	max-width: 80rem;
-	padding-top: $spacer*4;
-	padding-bottom: $spacer*4;
-}
+@import "about";
+@import "projects";
+@import "footer";

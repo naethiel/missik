@@ -1,5 +1,10 @@
-	<article class="carousel-item {{ if eq .Params.priority 0 }} active {{ end }}" style="background-image: url('images/{{ .Params.display }}');">
+	<article>
+		<figure>
+			<img src="images/{{ .Params.display }}" alt="" class="img-fluid">
+		</figure>
 		<a href="{{ .Permalink }}">
 			<h1>{{ .Title }}</h1>
 		</a>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quam minus autem reprehenderit reiciendis fugit, voluptas quibusdam odio dolorem nobis ullam at provident veniam incidunt cupiditate porro cum quod perspiciatis?</p>
+		<a href="{{ .Permalink }}" class="more">Show me more !</a>
 	</article>
