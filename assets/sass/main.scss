@@ -1,5 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700';
-@import "bootstrap";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "custom";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 @import "landing";
 @import "nav";
 @import "about";
