@@ -1,20 +1,35 @@
 #projects {
 	padding: $spacer-xl 0;
-	
+
+	h2 {
+		color: $brand-primary;
+		background: linear-gradient(45deg, $brand-primary, #ebbf74 40%, $brand-secondary);
+    	-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+    	-webkit-font-smoothing: antialiased;
+	}
+
 	article {
 		background: $gray-darker;
-		padding: $spacer;
+		padding: $spacer-lg;
 		margin-bottom: $spacer-lg;
-		
+
 		figure {
-			margin-top: - $spacer;
-			margin-left: - $spacer;
-			margin-right: - $spacer;
+			margin-top: - $spacer-lg;
+			margin-left: - $spacer-lg;
+			margin-right: - $spacer-lg;
+			margin-bottom: $spacer-lg;
 		}
 	}
-	
+
 	.more {
 		@extend .btn;
 		@extend .btn-primary;
+
+		&:hover {
+			background-color: $brand-primary;
+			border-color: $brand-primary;
+			color: $gray-lighter;
+		 }
 	}
 }

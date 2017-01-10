@@ -1,8 +1,9 @@
 	<section id="projects">
 		<div class="container">
-			<h1>My works :</h1>
-			{{ range $index, $page := .Data.Pages }} 
-				{{ $page.Render "li" }} 
+			<h1>My work</h1>
+			<h2>Here are a few of the projects I have worked for in web design, web development, branding and motion design.</h2>
+			{{ range $index, $page := .Data.Pages }}
+				{{ $page.Render "li" }}
 			{{ end }}
 		</div>
 		<!--  Old carousel here
