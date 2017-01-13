@@ -1,0 +1,24 @@
+body > section header h1 {
+	font-weight: 700;
+	font-size: 3rem;
+	text-transform: uppercase;
+	margin-bottom: $spacer-lg;
+
+	&:after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 1px;
+		background: $brand-gradient;
+	}
+}
+
+body > section header h2 {
+	color: $brand-primary;
+	font-size: 1.5rem;
+	font-weight: 500;
+	background: linear-gradient(45deg, lighten($brand-primary, 15%), #ebbf74 40%, lighten($brand-secondary, 5%));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-font-smoothing: antialiased;
+}
