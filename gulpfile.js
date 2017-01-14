@@ -45,9 +45,7 @@ gulp.task('vendors', function(){
 	gulp.src([
 		path.vendors + 'jquery/dist/jquery.js',
 		path.vendors + 'three/build/three.js',
-		path.vendors + 'animejs/anime.js',
-		path.vendors + 'tether/dist/js/tether.js',
-		path.vendors + 'bootstrap/dist/js/bootstrap.js'
+		path.vendors + 'animejs/anime.js'
 	])
 	.pipe(plumber())
 	.pipe(concat('vendors.js'))

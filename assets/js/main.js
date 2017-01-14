@@ -25,10 +25,6 @@ $(document).ready(function(){
 			$(document).trigger("logo.loaded");
 		}
 	});
-
-	$("#projects-carousel").carousel({
-		interval: 4000
-	})
 });
 
 $(document).on("logo.loaded", function(){
