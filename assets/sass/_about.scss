@@ -2,4 +2,8 @@
 	min-height: 40vh;
 	background-color: $gray-darker;
 	padding: $spacer*4 0;
+
+	@include media-breakpoint-up(md) {
+		header { justify-content: flex-end;	}
+	};
 }

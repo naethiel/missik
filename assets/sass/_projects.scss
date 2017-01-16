@@ -6,6 +6,10 @@
 		padding: $spacer-lg;
 		margin-bottom: $spacer-lg;
 		position: relative;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+		align-items: flex-start;
 
 		figure {
 			margin-top: - $spacer-lg;
@@ -14,7 +18,7 @@
 			margin-bottom: $spacer-lg;
 		}
 
-		h1 {
+		h2 {
 			margin-bottom: $spacer;
 		}
 
@@ -22,53 +26,27 @@
 			color: $brand-secondary;
 			margin-bottom: $spacer;
 		}
-	}
 
-	.more {
-		@extend .btn;
-		@extend .btn-primary;
+		@include media-breakpoint-up(md) {
+			background: none;
+			flex-flow: row;
+			flex-wrap: wrap;
+			align-items: stretch;
 
-		position: relative;
-		overflow: hidden;
-		border: none;
-		z-index: 1;
-
-		font-weight: 700;
-		text-transform: uppercase;
-		font-size: .9rem;
-
-
-		&:hover {
-			// background-color: $brand-primary;
-			// border-color: $brand-primary;
-			color: $gray-lighter;
-
-			&:before {
-				margin-left: -60%;
+			> figure {
+				margin-top: 0;
+				margin-left: 0;
+				margin-right: 0;
+				margin-bottom: 0;
+				order: 1;
+				width: 50%;
 			}
-			&:after {
-				margin-left: 40%;
+
+			> div {
+				width: 50%;
+				order: -1;
+				padding-right: $grid-gutter-width-base / 2;
 			}
-		 }
-
-		&:before, &:after {
-			content: "";
-			display: block;
-			background: $brand-gradient-nofade;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			transform: skewX(-45deg);
-			width: 100%;
-			transition: margin-left 0.3s ease;
-			z-index: -1;
-		}
-
-		&:before {
-			margin-left: -115%;
-		}
-		&:after {
-			margin-left: 95%;
 		}
 	}
 }

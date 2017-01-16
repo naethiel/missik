@@ -8,20 +8,4 @@
 				{{ $page.Render "li" }}
 			{{ end }}
 		</div>
-		<!--  Old carousel here
-		<div class="carousel slide" id="projects-carousel" data-ride="carousel">
-			<div class="carousel-inner" role="listbox">
-				{{ range $index, $page := .Data.Pages }} {{ $page.Render "li" }} {{ end }}
-			</div>
-		</div>
-		<nav class="carousel-controls">
-			<a href="#projects-carousel" role="button" data-slide="prev">Previous</a>
-			<ul>
-				{{ range $index, $item := .Data.Pages }}
-				<li><a href="#projects-carousel" role="button" data-slide-to="{{ $index }}" class="{{ if eq $index 0 }}active{{ end }}">{{ add $index 1 }}</a></li>
-				{{ end }}
-			</ul>
-			<a href="#projects-carousel" role="button" data-slide="next">Next</a>
-		</nav>
-		-->
 	</section>

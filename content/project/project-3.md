@@ -4,16 +4,12 @@ type = "project"
 year = "2014"
 category = "Print"
 role = "Design"
-display = "image1.jpg"
+[display]
+mobile = "image1.jpg"
+desktop = "image2.jpg"
+
+
 priority = 2
 +++
 
-## Big title in content here
-
-### this is a subtitle ?
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-#### separator title
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In January 2016, Adidas sponsored the Dubai marathon. We were employed to design a web app to engage participants and further brand awareness.

@@ -8,6 +8,8 @@ body > section header h1 {
 	text-transform: uppercase;
 	margin-bottom: $spacer-lg;
 
+	@include media-breakpoint-up(md) { font-size: 4rem;	};
+
 	&:after {
 		content: "";
 		display: block;

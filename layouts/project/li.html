@@ -1,13 +1,14 @@
 	<article>
 		<figure>
-			<img src="images/{{ .Params.display }}" alt="" class="img-fluid">
+			<img src="images/{{ .Params.display.mobile }}" alt="" class="img-fluid hidden-md-up">
+			<img src="images/{{ .Params.display.desktop }}" alt="" class="img-fluid hidden-sm-down">
 		</figure>
-		<a href="{{ .Permalink }}">
-			<h1>{{ .Title }}</h1>
-		</a>
-		<div class="meta">
-			{{ .Params.category }} | {{ .Params.role }}
+		<div>
+			<h2>{{ .Title }}</h2>
+			<div class="meta">
+				{{ .Params.category }} | {{ .Params.role }}
+			</div>
+			<p>{{ .Content }}</p>
+			<a href="{{ .Permalink }}" class="button"><span>Show me more !</span></a>
 		</div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quam minus autem reprehenderit reiciendis fugit, voluptas quibusdam odio dolorem nobis ullam at provident veniam incidunt cupiditate porro cum quod perspiciatis?</p>
-		<a href="{{ .Permalink }}" class="more"><span>Show me more !</span></a>
 	</article>
