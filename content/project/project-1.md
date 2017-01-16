@@ -2,7 +2,8 @@
 title = "Project title in TOML"
 type = "project"
 year = "2015"
-category = "web"
+category = "Web"
+role = "Design"
 display = "image1.jpg"
 priority = 0
 +++

@@ -2,7 +2,8 @@
 title = "Last one !"
 type = "project"
 year = "2012"
-category = "motion"
+category = "Web"
+role = "Front-end development"
 display = "image2.jpg"
 priority = 3
 +++

@@ -2,7 +2,8 @@
 title = "3rd project with some long title"
 type = "project"
 year = "2014"
-category = "print"
+category = "Print"
+role = "Design"
 display = "image1.jpg"
 priority = 2
 +++

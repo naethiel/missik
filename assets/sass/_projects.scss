@@ -5,6 +5,7 @@
 		background: $gray-darker;
 		padding: $spacer-lg;
 		margin-bottom: $spacer-lg;
+		position: relative;
 
 		figure {
 			margin-top: - $spacer-lg;
@@ -12,16 +13,54 @@
 			margin-right: - $spacer-lg;
 			margin-bottom: $spacer-lg;
 		}
+
+		h1 {
+			margin-bottom: $spacer;
+		}
+
+		.meta {
+			color: $brand-secondary;
+			margin-bottom: $spacer;
+		}
 	}
 
 	.more {
 		@extend .btn;
 		@extend .btn-primary;
 
+		position: relative;
+		overflow: hidden;
+
 		&:hover {
-			background-color: $brand-primary;
-			border-color: $brand-primary;
+			// background-color: $brand-primary;
+			// border-color: $brand-primary;
 			color: $gray-lighter;
+
+			&:before {
+				margin-left: 0;
+			}
+			// &:after {
+			// 	margin-right: -50%;
+			// }
 		 }
+
+		&:before /*, &:after */ {
+			content: "";
+			display: block;
+			background: $brand-gradient-nofade;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			transform: skewX(-45deg);
+			width: 100%;
+			transition: margin-left 0.3s ease;
+		}
+
+		&:before {
+			margin-left: -115%;
+		}
+		// &:after {
+		// 	margin-right: -100%;
+		// }
 	}
 }

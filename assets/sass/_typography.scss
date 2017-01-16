@@ -1,3 +1,7 @@
+h1, h2, h3, h4, h5, h6 {
+	text-transform: uppercase;
+}
+
 body > section header h1 {
 	font-weight: 700;
 	font-size: 3rem;
@@ -15,6 +19,8 @@ body > section header h1 {
 
 body > section header h2 {
 	color: $brand-primary;
+	text-transform: none;
+	line-height: $line-height-base;
 	font-size: 1.5rem;
 	font-weight: 500;
 	background: linear-gradient(45deg, lighten($brand-primary, 15%), #ebbf74 40%, lighten($brand-secondary, 5%));

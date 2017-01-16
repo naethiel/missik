@@ -2,7 +2,8 @@
 title = "Second project"
 type = "project"
 year = "2015"
-category = "web"
+category = "Web"
+role = "Design"
 display = "image2.jpg"
 priority = 1
 +++
