@@ -2,8 +2,36 @@
 	min-height: 40vh;
 	background-color: $gray-darker;
 	padding: $spacer*4 0;
+	position: relative;
+
+	.portrait {
+		display: none;
+		margin-bottom: 0;
+	}
 
 	@include media-breakpoint-up(md) {
 		header { justify-content: flex-end;	}
+		
+		.container > div { justify-content: flex-end; }
+
+		.portrait {
+			img { display: none; }
+
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 33%;
+			background: url("../images/portrait.jpg");
+			background-repeat: no-repeat;
+			background-position: right;
+			background-size: cover;
+		}
+
+		p {
+			@include make-col-ready();
+			@include make-col(8);
+		}
 	};
 }

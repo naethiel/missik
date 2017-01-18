@@ -5,8 +5,8 @@ year = "2012"
 category = "Web"
 role = "Front-end development"
 [display]
-mobile = "image1.jpg"
-desktop = "image2.jpg"
+mobile = "projet_4/1.jpg"
+desktop = "projet_4/1.jpg"
 
 
 priority = 3
