@@ -5,8 +5,8 @@ year = "2014"
 category = "Print"
 role = "Design"
 [display]
-mobile = "projet_3/1.jpg"
-desktop = "projet_3/1.jpg"
+mobile = "image1.jpg"
+desktop = "image1.jpg"
 
 
 priority = 2

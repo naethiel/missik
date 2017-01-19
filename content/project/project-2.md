@@ -5,8 +5,8 @@ year = "2015"
 category = "Web"
 role = "Design"
 [display]
-mobile = "projet_2/1.jpg"
-desktop = "projet_2/1.jpg"
+mobile = "image2.jpg"
+desktop = "image2.jpg"
 
 
 priority = 1

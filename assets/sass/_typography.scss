@@ -7,26 +7,51 @@ body > section header h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
 	margin-bottom: $spacer-lg;
+	position: relative;
+	overflow: hidden;
 
-	@include media-breakpoint-up(md) { font-size: 4rem;	};
+	@include media-breakpoint-up(md) { font-size: 6.5rem;	};
 
-	&:after {
+	span {
+		// border-bottom: $spacer-sm solid $body-color;
+		// border-top: $spacer-sm solid $body-color;
+
+		background: $body-color;
+		color: $gray-dark;
+		padding: $spacer-sm $spacer;
+	}
+	span:before {
 		content: "";
 		display: block;
-		width: 100%;
-		height: 1px;
-		background: $brand-gradient;
+		background: $brand-gradient-nofade;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		transform: skewX(-45deg);
+		padding-left: 10%;
+		transition: margin-left 0.3s ease;
+		z-index: 1;
+		margin-left:-13%;
 	}
 }
 
 body > section header h2 {
 	color: $brand-primary;
 	text-transform: none;
-	line-height: $line-height-base;
+	line-height: 1.4;
 	font-size: 1.5rem;
 	font-weight: 500;
 	background: linear-gradient(45deg, lighten($brand-primary, 15%), #ebbf74 40%, lighten($brand-secondary, 5%));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-webkit-font-smoothing: antialiased;
+}
+
+
+article h2 {
+	font-size: 4.5rem;
+	line-height: 1;
+	font-weight: 700;
+	position: relative;
+	color: $white;
 }
