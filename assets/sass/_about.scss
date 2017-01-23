@@ -10,9 +10,6 @@
 	}
 
 	@include media-breakpoint-up(md) {
-		header { justify-content: flex-end;	}
-		
-		.container > div { justify-content: flex-end; }
 
 		.portrait {
 			img { display: none; }

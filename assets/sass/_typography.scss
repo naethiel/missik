@@ -13,25 +13,21 @@ body > section header h1 {
 	@include media-breakpoint-up(md) { font-size: 6.5rem;	};
 
 	span {
-		// border-bottom: $spacer-sm solid $body-color;
-		// border-top: $spacer-sm solid $body-color;
-
 		background: $body-color;
 		color: $gray-dark;
 		padding: $spacer-sm $spacer;
 	}
-	span:before {
+
+	&:before {
 		content: "";
+		width: 2rem;
+		height: 2rem;
 		display: block;
-		background: $brand-gradient-nofade;
 		position: absolute;
 		top: 0;
-		bottom: 0;
-		transform: skewX(-45deg);
-		padding-left: 10%;
-		transition: margin-left 0.3s ease;
-		z-index: 1;
-		margin-left:-13%;
+		left: 0;
+		background:  url("../images/triangle.svg");
+
 	}
 }
 

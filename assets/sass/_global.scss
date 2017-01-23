@@ -7,22 +7,7 @@ html {
 	@include media-breakpoint-up(xl) { font-size: $font-size-root + 4; }
 }
 
-.container > header {
-	padding-bottom: $spacer-lg;
 
-	@include make-row();
-	justify-content: center;
-
-	> * {
-		@include make-col-ready();
-
-		@include media-breakpoint-up(md) {	@include make-col(8); };
-	}
-}
-
-.container > div {
-	@include make-row();
-}
 
 .button {
 	@extend .btn;
