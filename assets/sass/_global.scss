@@ -7,8 +7,6 @@ html {
 	@include media-breakpoint-up(xl) { font-size: $font-size-root + 4; }
 }
 
-
-
 .button {
 	@extend .btn;
 	@extend .btn-primary;

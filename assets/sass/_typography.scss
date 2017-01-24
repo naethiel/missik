@@ -4,13 +4,17 @@ h1, h2, h3, h4, h5, h6 {
 
 body > section header h1 {
 	font-weight: 700;
-	font-size: 3rem;
+	font-size: 2.5rem;
+	letter-spacing: -0.05rem;
 	text-transform: uppercase;
 	margin-bottom: $spacer-lg;
 	position: relative;
 	overflow: hidden;
 
-	@include media-breakpoint-up(md) { font-size: 6.5rem;	};
+	@include media-breakpoint-up(md) {
+		font-size: 6.5rem;
+		letter-spacing: normal;
+	};
 
 	span {
 		background: $body-color;
@@ -37,6 +41,7 @@ body > section header h2 {
 	line-height: 1.4;
 	font-size: 1.5rem;
 	font-weight: 500;
+	margin-bottom: $spacer;
 	background: linear-gradient(45deg, lighten($brand-primary, 15%), #ebbf74 40%, lighten($brand-secondary, 5%));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -45,7 +50,8 @@ body > section header h2 {
 
 
 article h2 {
-	font-size: 4.5rem;
+	font-size: 3rem;
+	@include media-breakpoint-up(md) { font-size: 4.5rem; }
 	line-height: 1;
 	font-weight: 700;
 	position: relative;

@@ -4,6 +4,8 @@
 - http://byassociationonly.com/ : present few projects but as case studies.
 - http://robinmastromarino.com/project/dragand : have key presentation for a project: Role, Client, Date.
 - http://merci-michel.com/timelikes-infonity : project presentation.
+- Helen Tran https://blog.prototypr.io/crash-course-ui-design-25d13ff60962#.ix0bnbs4j : simplicity !
+- https://uxplanet.org/web-of-life-collection-of-creative-web-design-concepts-43e0502e1577#.25gbviqik : inspiration
 
 ## Various ideas
 

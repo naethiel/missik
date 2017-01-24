@@ -1,34 +1,33 @@
 #about {
-	min-height: 40vh;
-	background-color: $gray-darker;
-	padding: $spacer*4 0;
-	position: relative;
+	padding: $spacer-xl*2 0;
 
-	.portrait {
-		display: none;
-		margin-bottom: 0;
-	}
+	background: $gray-darker;
 
 	@include media-breakpoint-up(md) {
+		background: url("../images/portrait.jpg");
+		background-position: center;
+		background-size: cover;
+	}
 
-		.portrait {
-			img { display: none; }
+	header, .content-box {
+		max-width: 60rem;
+		margin-left: map-get($grid-gutter-widths, xs) / 2;
+		margin-right: map-get($grid-gutter-widths, xs) / 2;
 
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			width: 33%;
-			background: url("../images/portrait.jpg");
-			background-repeat: no-repeat;
-			background-position: right;
-			background-size: cover;
+		@include media-breakpoint-up(sm) {
+			width: percentage(3 / 4);
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@include media-breakpoint-up(md) {
+			width: 50%;
+			margin-right: 0;
+			margin-left: 50%;
+			max-width: 30rem;
 		}
 
-		p {
-			@include make-col-ready();
-			@include make-col(8);
+		h2 {
+			max-width: 55rem;
 		}
-	};
+	}
 }
