@@ -1,33 +1,41 @@
 #about {
-	padding: $spacer-xl*2 0;
-
 	background: $gray-darker;
+	display: flex;
+	flex-flow: row;
 
-	@include media-breakpoint-up(md) {
+	min-height: 40vw;
+
+	figure {
 		background: url("../images/portrait.jpg");
 		background-position: center;
 		background-size: cover;
-	}
-
-	header, .content-box {
-		max-width: 60rem;
-		margin-left: map-get($grid-gutter-widths, xs) / 2;
-		margin-right: map-get($grid-gutter-widths, xs) / 2;
+		margin-bottom: 0;
+		display: none;
 
 		@include media-breakpoint-up(sm) {
-			width: percentage(3 / 4);
-			margin-left: auto;
-			margin-right: auto;
+			display: block;
+			width: percentage(5/12);
 		}
 		@include media-breakpoint-up(md) {
-			width: 50%;
-			margin-right: 0;
-			margin-left: 50%;
-			max-width: 30rem;
+			display: block;
+			width: percentage(6/12);
 		}
+	}
 
-		h2 {
-			max-width: 55rem;
+	article {
+		padding: $spacer-xl $spacer-lg;
+		background: url('../images/textblock-bg.gif');
+
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+
+		@include media-breakpoint-up(sm) {
+			width: percentage(7/12);
+		}
+		@include media-breakpoint-up(md) {
+			width: percentage(6/12);
+			padding: $spacer-xl;
 		}
 	}
 }
