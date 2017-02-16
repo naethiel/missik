@@ -26,13 +26,3 @@ body > section header h1 {
 	-webkit-text-fill-color: transparent;
 	-webkit-font-smoothing: antialiased;
 }
-
-
-article h2 {
-	font-size: 3rem;
-	@include media-breakpoint-up(md) { font-size: 4.5rem; }
-	line-height: 1;
-	font-weight: 700;
-	position: relative;
-	color: $white;
-}
