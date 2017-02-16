@@ -3,7 +3,7 @@
 	display: flex;
 	flex-flow: row;
 
-	min-height: 40vw;
+	// min-height: 40vw;
 
 	figure {
 		background: url("../images/portrait.jpg");
@@ -20,11 +20,26 @@
 			display: block;
 			width: percentage(6/12);
 		}
+
+		@include media-breakpoint-up(xl){
+			min-height: 40vw;
+		}
 	}
 
 	article {
-		padding: $spacer-xl $spacer-lg;
+		padding: $spacer-xl map-get($grid-gutter-widths, xs) / 2;
 		background: url('../images/textblock-bg.gif');
+		background-size: 8px 8px;
+		@media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) {
+			background: url("../images/textblock-bg@2x.gif");
+			background-size: 8px 8px;
+		}
 
 		display: flex;
 		flex-flow: column;

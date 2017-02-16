@@ -10,14 +10,14 @@ body > section header h1 {
 	margin-bottom: $spacer-lg;
 
 	@include media-breakpoint-up(md){
-		font-size: 5rem;
+		font-size: 4rem;
 	}
 }
 
 .colorful-heading {
 	color: $brand-primary;
 	text-transform: none;
-	line-height: 1.4;
+	line-height: 1.3;
 	font-size: 1.5rem;
 	font-weight: 600;
 	margin-bottom: $spacer;
