@@ -42,20 +42,20 @@
 
 	.projects-container {
 		@include make-container();
-
-		@each $breakpoint in map-keys($grid-breakpoints) {
-			@include media-breakpoint-up($breakpoint) {
-				max-width: map-get($container-max-widths, $breakpoint);
-			}
-		}
+		//
+		// @each $breakpoint in map-keys($grid-breakpoints) {
+		// 	@include media-breakpoint-up($breakpoint) {
+		// 		max-width: map-get($container-max-widths, $breakpoint);
+		// 	}
+		// }
 
 		padding-top: $spacer-xl;
 		padding-bottom: $spacer-xl;
 	}
 
 	article {
+
 		width: 100%;
-		min-height: 75vh;
 		position: relative;
 		margin-bottom: $spacer-lg;
 
@@ -68,7 +68,7 @@
 		box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.50);
 
 		@include media-breakpoint-up(md) {
-			min-height: 20vw;
+			min-height: 23rem;
 
 			flex-flow: row;
 			align-items: stretch;
@@ -76,30 +76,58 @@
 			height: auto;
 		}
 
-
-
 		figure {
-			position: absolute;
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			left: 0;
-			overflow: hidden;
-			margin-bottom: 0;
-
 			@include media-breakpoint-up(md) {
+				position: absolute;
+				background-repeat: no-repeat;
+				background-position: center;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				overflow: hidden;
+				margin-bottom: 0;
 				width: percentage(2 / 3);
 				left: auto;
-				/* ---------------------------------------------------------------------- */
-				/* transform and counter transform is awkward. Should use Clip-path here. */
-				// transform: skewX(-45deg);
-				/* ---------------------------------------------------------------------- */
+
+				&:before {
+					/*
+					*
+					* Bevel for visuals. transform-origin is bottomright of block so that whatever the skew angle
+					* it goes from top to bottom.
+					*
+					* The block needs to be large enough to cover the whole image even with high height blocks
+					* or big skew angles, for my usage 50% seems enough.
+					*
+					* overflow:hidden on parent element helps for this not to show strangely or interact since
+					* it gets clipped inside the <figure> block
+					*
+					*/
+					content: "";
+					display: block;
+					position: absolute;
+					background: $gray-darker;
+					top: 0;
+					bottom: 0;
+					left: -50%;
+					width: 50%;
+					transform-origin: 100% 100%;
+					transform: skewX(-15deg);
+				}
 			}
 
-			img { display: none; }
+			img {
+				@include img-fluid();
+
+				@include media-breakpoint-up(md){
+					display: block;
+					max-width: 90%;
+					max-height: 90%;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+			}
 		}
 
 		section {
@@ -108,21 +136,29 @@
 			display: flex;
 			flex-flow: column;
 			align-items: flex-start;
-			justify-content: center;
+			justify-content: flex-end;
 
 			@include media-breakpoint-up(md) {
-				padding: $spacer-xl;
+				padding: 3rem;
 				max-width: percentage(2 / 3);
 			}
-			@include media-breakpoint-up(xl) {
-				max-width: percentage(1 / 3);
+			@include media-breakpoint-up(lg) {
+				max-width: percentage(6 / 12);
 			}
 
-			h2 { margin-bottom: $spacer-sm; }
+			h1, h2, h3, h4, h5, h6 {
+				margin-bottom: $spacer-sm;
+			}
 
+			h1 {
+				@include media-breakpoint-down(sm){
+					font-size: 2rem;
+				}
+			}
 			.meta {
 				color: $brand-tertiary;
-				font-size: $font-size-sm;
+				margin-bottom: $spacer;
+				font-size: $font-size-xs;
 				font-weight: 500;
 			}
 		}

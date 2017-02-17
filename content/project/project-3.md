@@ -6,7 +6,9 @@ category = "Print"
 role = "Design"
 [display]
 mobile = "image1.jpg"
-desktop = "image1.jpg"
+desktop = "projet_1/nf.png"
+color1 = "#beb183"
+color2 = "#1d6c83"
 
 
 priority = 2

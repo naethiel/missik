@@ -6,7 +6,9 @@ category = "Web"
 role = "Design"
 [display]
 mobile = "image2.jpg"
-desktop = "image2.jpg"
+desktop = "projet_1/nf.png"
+color1 = "#314755"
+color2 = "#26a0da"
 
 
 priority = 1

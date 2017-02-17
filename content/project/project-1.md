@@ -1,12 +1,14 @@
 +++
-title = "Project title in TOML"
+title = "Nouvelles Frontières"
 type = "project"
 year = "2015"
 category = "Web"
-role = "Design"
+role = "Art Direction"
 [display]
 mobile = "image1.jpg"
-desktop = "image1.jpg"
+desktop = "projet_1/nf.png"
+color1 = "#480048"
+color2 = "#c04848"
 
 
 priority = 0
