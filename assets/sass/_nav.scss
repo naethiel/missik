@@ -1,3 +1,12 @@
-#navbar-logo {
-	max-width: 2rem;
+#main-navbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	display: flex;
+	flex-flow: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	padding: $spacer-sm;
 }
