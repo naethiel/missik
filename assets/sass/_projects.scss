@@ -42,90 +42,86 @@
 
 	.projects-container {
 		@include make-container();
-		//
-		// @each $breakpoint in map-keys($grid-breakpoints) {
-		// 	@include media-breakpoint-up($breakpoint) {
-		// 		max-width: map-get($container-max-widths, $breakpoint);
-		// 	}
-		// }
+		 max-width: 1400px; // for huge screens it is best to have a max limit.
 
 		padding-top: $spacer-xl;
 		padding-bottom: $spacer-xl;
-	}
-
-	article {
-
-		width: 100%;
-		position: relative;
-		margin-bottom: $spacer-lg;
 
 		display: flex;
 		flex-flow: column;
-		justify-content: flex-end;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: stretch;
+	}
+
+	article {
+		position: relative;
+		margin-bottom: $spacer-xl;
+
+
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
 		align-items: flex-start;
 
 		background: $gray-darker;
 		box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.50);
 
+
 		@include media-breakpoint-up(md) {
+			margin-right: $spacer;
+			margin-left: $spacer;
 			min-height: 23rem;
 
 			flex-flow: row;
 			align-items: stretch;
 			justify-content: flex-start;
 			height: auto;
+			overflow: hidden;
+
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 27rem 0 0 27rem;
+				border-color: transparent transparent transparent $gray-darker;
+
+				@include media-breakpoint-up(lg) {
+					border-width: 20rem 0 0 20rem;
+				}
+			}
 		}
 
+
 		figure {
+			margin-bottom: 0;
+
 			@include media-breakpoint-up(md) {
 				position: absolute;
 				background-repeat: no-repeat;
 				background-position: center;
-				top: 0;
-				left: 0;
-				bottom: 0;
 				right: 0;
+				left: 0;
+				top: 0;
+				bottom: 0;
 				overflow: hidden;
-				margin-bottom: 0;
-				width: percentage(2 / 3);
-				left: auto;
-
-				&:before {
-					/*
-					*
-					* Bevel for visuals. transform-origin is bottomright of block so that whatever the skew angle
-					* it goes from top to bottom.
-					*
-					* The block needs to be large enough to cover the whole image even with high height blocks
-					* or big skew angles, for my usage 50% seems enough.
-					*
-					* overflow:hidden on parent element helps for this not to show strangely or interact since
-					* it gets clipped inside the <figure> block
-					*
-					*/
-					content: "";
-					display: block;
-					position: absolute;
-					background: $gray-darker;
-					top: 0;
-					bottom: 0;
-					left: -50%;
-					width: 50%;
-					transform-origin: 100% 100%;
-					transform: skewX(-15deg);
-				}
 			}
 
 			img {
 				@include img-fluid();
 
-				@include media-breakpoint-up(md){
+				@include media-breakpoint-up(md) {
 					display: block;
-					max-width: 90%;
-					max-height: 90%;
 					position: absolute;
 					bottom: 0;
 					right: 0;
+					max-width: 90%;
+					max-height: 90%;
 				}
 			}
 		}
@@ -139,11 +135,11 @@
 			justify-content: flex-end;
 
 			@include media-breakpoint-up(md) {
-				padding: 3rem;
-				max-width: percentage(2 / 3);
-			}
-			@include media-breakpoint-up(lg) {
 				max-width: percentage(6 / 12);
+			}
+
+			@include media-breakpoint-up(lg) {
+				padding: 3rem;
 			}
 
 			h1, h2, h3, h4, h5, h6 {
@@ -151,8 +147,10 @@
 			}
 
 			h1 {
-				@include media-breakpoint-down(sm){
-					font-size: 2rem;
+				text-shadow: 0 0 10px transparentize($gray-darker, .6);
+
+				@include media-breakpoint-down(xs){
+					font-size: 1.7rem;
 				}
 			}
 			.meta {

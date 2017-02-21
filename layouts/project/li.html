@@ -1,7 +1,15 @@
 	<article>
-		<figure style="background: linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});">
+
+		<figure style="background: linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});" class="hidden-sm-down">
 			<img src="images/{{ .Params.display.desktop }}" alt="{{ .Title }} - illustration">
 		</figure>
+
+		<a href="{{ .RelPermalink }}" class="hidden-md-up">
+			<figure style="background: linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});">
+				<img src="images/{{ .Params.display.desktop }}" alt="{{ .Title }} - illustration">
+			</figure>
+		</a>
+		
 		<section>
 			<h1>{{ .Title }}</h1>
 			<p class="meta">

@@ -66,11 +66,11 @@ $link-hover-color:      $brand-primary;
 $grid-columns:               12 !default;
 $grid-gutter-width-base:     30px;
 $grid-gutter-widths: (
-  xs: $grid-gutter-width-base * 3,
+  xs: $grid-gutter-width-base * 2,
   sm: $grid-gutter-width-base * 2,
   md: $grid-gutter-width-base,
-  lg: $grid-gutter-width-base,
-  xl: $grid-gutter-width-base
+  lg: $grid-gutter-width-base / 2,
+  xl: $grid-gutter-width-base / 2
 );
 
 
