@@ -90,10 +90,20 @@
 				border-style: solid;
 				border-width: 27rem 0 0 27rem;
 				border-color: transparent transparent transparent $gray-darker;
+				transition: transform 0.5s ease-in-out;
+				transform-origin: bottom left;
 
 				@include media-breakpoint-up(lg) {
 					border-width: 20rem 0 0 20rem;
 				}
+			}
+
+			&:hover:before {
+				transform: scale(.9);
+			}
+
+			&:hover figure img {
+				transform: scale(1.05);
 			}
 		}
 
@@ -114,6 +124,8 @@
 
 			img {
 				@include img-fluid();
+				transition: transform .5s ease-in-out;
+				transform-origin: bottom right;
 
 				@include media-breakpoint-up(md) {
 					display: block;
