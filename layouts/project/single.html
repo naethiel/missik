@@ -2,18 +2,32 @@
 	<head>
 		{{ partial "head.partial.html" . }}
 	</head>
-	<body>
+	<body class="project-single">
+
 		{{ partial "nav.partial.html" . }}
-		
-		<h1>{{ .Title }}</h1>
-		<pre>{{ .Params.year }} | {{ .Params.category }}</pre>
-		<p>
-			{{ .Content }}
-		</p>
+
+		<header>
+			<div class="wrapper" style="background-image: url('./images/{{ .Params.display.desktop }}'), linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});">
+				<h1>{{ .Title }}</h1>
+			</div>
+		</header>
+		<section>
+			<header>
+				<div>Role: {{ .Params.role }}</div>
+				<div>Client: {{ .Params.client }}</div>
+				<div>Date: {{ .Params.year }}</div>
+			</header>
+			<article>
+				{{ .Content }}
+			</article>
+			<section>
+				<!-- here be pretty pictures -->
+			</section>
+		</section>
+
+		{{ partial "footer.partial.html" . }}
 
 		<script src="js/vendors.js"></script>
 		<script src="js/app.js"></script>
 	</body>
 </html>
-
-{{ partial "footer.partial.html" . }}

@@ -1,5 +1,5 @@
 #main-navbar {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -9,4 +9,5 @@
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	padding: $spacer-sm;
+	z-index: 2000;
 }
