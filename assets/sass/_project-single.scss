@@ -13,7 +13,11 @@
 		left: 0;
 		bottom: 0;
 		right: 0;
-		
+
+		* {
+			text-shadow: 0 0 15px transparentize(black, .4);
+			color: white;
+		}
 	}
 
 	> section {
@@ -34,6 +38,15 @@
 			> * {
 				@include make-col-ready();
 				@include make-col(4);
+
+				text-transform: uppercase;
+				font-size: $font-size-xs;
+				font-weight: 700;
+				text-align: center;
+
+				&:not(:last-child){
+					border-right: 1px solid $gray;
+				}
 			}
 		}
 
