@@ -38,4 +38,24 @@ $(document).on("logo.loaded", function(){
 			$(document).trigger("name.loaded");
 		}
 	})
-})
+});
+
+
+// Only for project single page
+
+if (document.querySelector("body").classList.contains("project-single")) {
+
+	const headline = document.querySelector("body > header .wrapper h1");
+
+	window.addEventListener("scroll", function() {
+		const windowHeight = window.innerHeight;
+
+		var scale = 1 - (window.pageYOffset * .1 / windowHeight);
+		var opacity = 1 - (window.pageYOffset * 4 / windowHeight);
+
+		headline.setAttribute("style",
+			"transform: scale(" +  scale + ");"
+			+ "opacity: " + opacity);
+
+	});
+}

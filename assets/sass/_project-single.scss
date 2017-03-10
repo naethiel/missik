@@ -1,9 +1,15 @@
 .project-single {
 
+	> header {
+		@include media-breakpoint-down(md) {
+			max-height: 75vh;
+		}
+	}
+
 	> header .wrapper {
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
-		background-position: bottom right;
+		background-position: center;
 		background-attachment: fixed;
 		display: flex;
 		align-items: center;
@@ -13,10 +19,24 @@
 		left: 0;
 		bottom: 0;
 		right: 0;
+		padding: $spacer-lg;
+
+
+		@include media-breakpoint-up(md) {
+			background-size: contain;
+			background-position: bottom right;
+		}
 
 		* {
 			text-shadow: 0 0 15px transparentize(black, .4);
 			color: white;
+			text-align: center;
+			// transition: all .3s ease-in-out;
+		}
+
+		.scrolled {
+			opacity: 0;
+			transform: scale(.8);
 		}
 	}
 
@@ -36,9 +56,7 @@
 			padding: $spacer 0;
 
 			> * {
-				@include make-col-ready();
-				@include make-col(4);
-
+				flex: 1;
 				text-transform: uppercase;
 				font-size: $font-size-xs;
 				font-weight: 700;

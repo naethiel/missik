@@ -4,7 +4,7 @@
 	</head>
 	<body class="project-single">
 
-		{{ partial "nav.partial.html" . }}
+		<!-- {{ partial "nav.partial.html" . }} -->
 
 		<header>
 			<div class="wrapper" style="background-image: url('./images/{{ .Params.display.desktop }}'), linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});">
@@ -15,7 +15,7 @@
 			<header>
 				<div>Role&nbsp;:<br>{{ .Params.role }}</div>
 				<div>Client&nbsp;:<br>{{ .Params.client }}</div>
-				<div>Date&nbsp;:<br>{{ .Params.year }}</div> 
+				<div>Date&nbsp;:<br>{{ .Params.year }}</div>
 			</header>
 			<article>
 				{{ .Content }}
