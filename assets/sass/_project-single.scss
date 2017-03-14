@@ -2,7 +2,7 @@
 
 	> header {
 		@include media-breakpoint-down(md) {
-			max-height: 75vh;
+			height: 75vh;
 		}
 	}
 
@@ -48,17 +48,17 @@
 			}
 		}
 
-		> * {
+		> article, > section, > header {
 			@include make-row();
 		}
 
 		> header {
-			padding: $spacer 0;
+			padding: $spacer-lg 0;
 
 			> * {
 				flex: 1;
 				text-transform: uppercase;
-				font-size: $font-size-xs;
+				font-size: $font-size-sm;
 				font-weight: 700;
 				text-align: center;
 
@@ -66,10 +66,23 @@
 					border-right: 1px solid $gray;
 				}
 			}
+
+			.definition {
+				font-weight: 400;
+			}
 		}
 
 		> article {
-			@include make-col-ready();
+			text-align: justify;
+
+			@include media-breakpoint-up(sm) {
+				text-align: left;
+			};
+
+			section {
+				@include make-col-ready();
+				@include make-col(12);
+			}
 		}
 	}
 }

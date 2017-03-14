@@ -3,11 +3,117 @@
 	top: 0;
 	left: 0;
 	right: 0;
+	background: $body-bg;
+	border-bottom: 1px solid $gray;
 
 	display: flex;
 	flex-flow: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	padding: $spacer-sm;
+	padding: 1rem;
 	z-index: 2000;
+
+	@include media-breakpoint-up(md){
+		background: transparent;
+		border: none;
+	};
+}
+
+#navbar-logo {
+	z-index: 10000;
+}
+
+#sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	background: $brand-gradient-nofade;
+	color: white;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	transform: translateX(100%);
+	transition: transform .5s ease-out;
+
+	@include media-breakpoint-up(md) {
+		align-items: stretch;
+	};
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li a {
+		display: block;
+		padding: $spacer $spacer-lg;
+		color: white;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: $font-size-lg;
+
+		transition-property: transform;
+		transition-duration: .5s;
+		transition-timing-function: ease-in;
+
+
+		@include media-breakpoint-up(md) {
+			padding: $spacer $spacer-xl;
+		};
+
+		&:hover, &:active, &:focus {
+			background: $body-bg;
+			text-decoration: none;
+		}
+	}
+
+	#sidebar-close-btn {
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: white;
+		display: block;
+		width: 4rem;
+		height: 4rem;
+
+		&:before {
+			content: "";
+			width: 3px;
+			height: 2rem;
+			display: block;
+			position: absolute;
+			top: 1rem;
+			left: 50%;
+			background: white;
+			transform: rotate(45deg);
+		}
+		&:after {
+			content: "";
+			width: 3px;
+			height: 2rem;
+			display: block;
+			position: absolute;
+			top: 1rem;
+			left: 50%;
+			background: white;
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+#sidebar.open {
+	transform: translateX(0);
+	transition: transform .5s ease-out;
+}
+
+#sidebar:not(.open) li a {
+	transform: translateX(100%);
+	transition-property: transform;
+	transition-duration: .8s;
+	transition-timing-function: ease-in;
 }

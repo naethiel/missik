@@ -4,7 +4,7 @@
 	</head>
 	<body class="project-single">
 
-		<!-- {{ partial "nav.partial.html" . }} -->
+		{{ partial "nav.partial.html" . }}
 
 		<header>
 			<div class="wrapper" style="background-image: url('./images/{{ .Params.display.desktop }}'), linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});">
@@ -13,19 +13,31 @@
 		</header>
 		<section>
 			<header>
-				<div>Role&nbsp;:<br>{{ .Params.role }}</div>
-				<div>Client&nbsp;:<br>{{ .Params.client }}</div>
-				<div>Date&nbsp;:<br>{{ .Params.year }}</div>
+				<div><span class="definition">Role</span><br>{{ .Params.role }}</div>
+				<div><span class="definition">Client</span><br>{{ .Params.client }}</div>
+				<div><span class="definition">Date</span><br>{{ .Params.year }}</div>
 			</header>
 			<article>
-				{{ .Content }}
+				<section class="text-content">
+					{{ .Content }}
+				</section>
+				<section class="visual-content">
+					<!-- illustration -->
+				</section>
 			</article>
-			<section>
-				<!-- here be pretty pictures -->
-			</section>
 		</section>
+		<footer>
+		 {{ if .IsPage }}
+			{{ if .PrevInSection }}
+				<a href="{{ .PrevInSection.Permalink }}">Previous project: {{ .PrevInSection.Title }}</a>
+			{{ end }}
+			{{ if .NextInSection }}
+				<a href="{{ .NextInSection.Permalink }}">Next project: {{ .NextInSection.Title }}</a>
+			{{ end }}
+		{{ end }}
+		</footer>
 
-		{{ partial "footer.partial.html" . }}
+		<!-- {{ partial "footer.partial.html" . }} -->
 
 		<script src="js/vendors.js"></script>
 		<script src="js/app.js"></script>

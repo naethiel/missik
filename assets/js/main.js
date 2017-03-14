@@ -2,6 +2,57 @@ console.log("main.js loaded");
 
 
 $(document).ready(function(){
+	initSidebar();
+
+	if(document.querySelector("body").classList.contains("home")) {
+		initLanding();
+	}
+
+	if (document.querySelector("body").classList.contains("project-single")) {
+		initProjectPage();
+	}
+});
+
+
+// Only for project single page
+
+function initProjectPage() {
+	const headline = document.querySelector("body > header .wrapper h1");
+
+	window.addEventListener("scroll", function() {
+		const windowHeight = window.innerHeight;
+
+		var scale = 1 - (window.pageYOffset * .2 / windowHeight);
+		var opacity = 1 - (window.pageYOffset * 4 / windowHeight);
+
+		headline.setAttribute("style",
+			"transform: scale(" +  scale + ");"
+			+ "opacity: " + opacity);
+
+	});
+}
+
+
+// Sidebar behavior
+
+function initSidebar() {
+	const sidebar = document.querySelector("#sidebar");
+	const sidebarOpenBtn = document.querySelector("#sidebar-open-btn");
+	const sidebarCloseBtn = document.querySelector("#sidebar-close-btn");
+
+	sidebarOpenBtn.addEventListener("click", function(e) {
+		e.preventDefault();
+		sidebar.classList.toggle("open");
+	});
+
+	sidebarCloseBtn.addEventListener("click", function(e) {
+		e.preventDefault();
+		sidebar.classList.toggle("open");
+	});
+}
+
+
+function initLanding() {
 	anime({
 		targets: "#logo polygon",
 		opacity: [0, 1],
@@ -22,40 +73,20 @@ $(document).ready(function(){
 			return (500 * index) / (Math.sqrt(index +1)) ;
 		},
 		complete: function(e){
-			$(document).trigger("logo.loaded");
+			$(document).trigger("logo:loaded");
 		}
 	});
-});
 
-$(document).on("logo.loaded", function(){
-	anime({
-		targets: "#name",
-		translateY: ["10px", "0px"],
-		duration: 1000,
-		opacity: [0, 1],
-		easing: "easeOutQuad",
-		complete: function(e){
-			$(document).trigger("name.loaded");
-		}
-	})
-});
-
-
-// Only for project single page
-
-if (document.querySelector("body").classList.contains("project-single")) {
-
-	const headline = document.querySelector("body > header .wrapper h1");
-
-	window.addEventListener("scroll", function() {
-		const windowHeight = window.innerHeight;
-
-		var scale = 1 - (window.pageYOffset * .1 / windowHeight);
-		var opacity = 1 - (window.pageYOffset * 4 / windowHeight);
-
-		headline.setAttribute("style",
-			"transform: scale(" +  scale + ");"
-			+ "opacity: " + opacity);
-
+	$(document).on("logo:loaded", function(){
+		anime({
+			targets: "#name",
+			translateY: ["10px", "0px"],
+			duration: 1000,
+			opacity: [0, 1],
+			easing: "easeOutQuad",
+			complete: function(e){
+				$(document).trigger("name.loaded");
+			}
+		})
 	});
 }

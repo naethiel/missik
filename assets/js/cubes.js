@@ -1,5 +1,9 @@
-console.log("the cubes file loads correct !");
-console.warn("Cubes.JS is disabled. Not loading but this is normal.");
+console.log("cube.js loaded");
+
+const config = {
+	active: false
+}
+
 // initialization
 var scene = new THREE.Scene();
 
@@ -14,7 +18,12 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 
 // actually add it to the DOM
 var div = document.getElementById("webgl-background");
-// div.appendChild( renderer.domElement ); // disabled while developping the rest of the site
+
+if (config.active) {
+	div.appendChild( renderer.domElement ); // disabled while developping the rest of the site
+} else {
+	console.warn("cube.js is disabled.");
+}
 
 /* ------------------------------------------------------- */
 // Adding window resize support
