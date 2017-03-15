@@ -4,6 +4,8 @@ console.log("main.js loaded");
 $(document).ready(function(){
 	initSidebar();
 
+	initNavBar();
+
 	if(document.querySelector("body").classList.contains("home")) {
 		initLanding();
 	}
@@ -51,6 +53,17 @@ function initSidebar() {
 	});
 }
 
+function initNavBar() {
+	const navbar = document.querySelector("#main-navbar.home-navigation");
+	if (navbar) {
+		window.addEventListener("scroll", function(){
+			const landing = document.querySelector("body > header");
+			const landingHeight = landing.clientHeight;
+			console.log(landingHeight);
+			(window.pageYOffset > landingHeight) ? navbar.classList.add("scrolled") : navbar.classList.remove("scrolled");
+		});
+	}
+}
 
 function initLanding() {
 	anime({

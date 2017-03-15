@@ -17,6 +17,18 @@
 		background: transparent;
 		border: none;
 	};
+
+	transition: all .5s ease-in-out;
+
+	&.home-navigation {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	&.home-navigation.scrolled {
+		visibility: visible;
+		opacity: 1;
+	}
 }
 
 #navbar-logo {
@@ -35,13 +47,23 @@
 	color: white;
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: space-around;
+	justify-content: center;
 	transform: translateX(100%);
 	transition: transform .5s ease-out;
 
 	@include media-breakpoint-up(md) {
 		align-items: stretch;
 	};
+
+	.nav-heading {
+		text-transform: capitalize;
+		font-weight: 400;
+		padding:  0 $spacer-lg $spacer;
+		color: $gray-lighter;
+		@include media-breakpoint-up(md) {
+			padding:  0 $spacer-xl $spacer-lg ;
+		};
+	}
 
 	ul {
 		list-style: none;

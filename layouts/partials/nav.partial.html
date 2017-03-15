@@ -1,13 +1,14 @@
-<nav id="main-navbar" role="navigation">
+<nav id="main-navbar" role="navigation" {{ if .IsHome }} class="home-navigation" {{end}}>
 	<a role="button" aria-label="return to home" href="{{ .Site.BaseURL }}" id="navbar-logo">
 		<img src="images/small-logo.png" alt="MISSIK">
 	</a>
 	<a href="#" id="sidebar-open-btn" role="button">
-		<img src="./images/navbar-btn.png" alt="My works (open navigation)">
+		<img src="./images/navbar-btn.svg" alt="My works (open navigation)">
 		<span class="sr-only">My works (open navigation)</span>
 	</a>
 	<div id="sidebar">
 		<a href="#" id="sidebar-close-btn"><span class="sr-only" role="button">Close this menu</span></a>
+		<h3 class="nav-heading">My works</h3>
 		<ul role="navigation">
 		{{ $currentPage := . }}
 		{{ range $i, $page := where .Site.Pages "Type" "project" }}
