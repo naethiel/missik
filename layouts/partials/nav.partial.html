@@ -12,7 +12,7 @@
 		<ul role="navigation">
 		{{ $currentPage := . }}
 		{{ range $i, $page := where .Site.Pages "Type" "project" }}
-			<li><a href="{{ .RelPermalink }}" class="{{ if eq $currentPage.Title .Title }}active{{ end }}" style="transition-delay: {{ mul $i 0.1 | safeCSS }}s">{{ .Title }}</a></li>
+			<li><a href="{{ .RelPermalink }}" class="{{ if eq $currentPage.Title .Title }}active{{ end }}" style="transition-delay: {{ mul $i 0.1 | add 0.2 | safeCSS }}s">{{ .Title }}</a></li>
 		{{ end }}
 		</ul>
 	</div>

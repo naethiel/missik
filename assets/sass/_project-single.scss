@@ -100,7 +100,11 @@
 			color: white;
 			position: relative;
 			overflow: hidden;
-			padding: 0 $spacer-lg;
+			padding: 0 $spacer;
+
+			@include media-breakpoint-up(md) {
+				padding: 0 $spacer-lg;
+			};
 
 			&:before { // this block is used as a darkening filter on top of the data-applied gradient background of the <a> block
 				content: "";

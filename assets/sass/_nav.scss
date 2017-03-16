@@ -78,10 +78,11 @@
 		text-transform: uppercase;
 		font-weight: 700;
 		font-size: $font-size-lg;
+		opacity: 1;
 
-		transition-property: transform;
+		transition-property: all;
 		transition-duration: .5s;
-		transition-timing-function: ease-in;
+		transition-timing-function: cubic-bezier(0, 0, 0, 1);
 
 
 		@include media-breakpoint-up(md) {
@@ -134,8 +135,9 @@
 }
 
 #sidebar:not(.open) li a {
-	transform: translateX(100%);
-	transition-property: transform;
+	transform: translateX(50%);
+	opacity: 0;
+	transition-property: all;
 	transition-duration: .8s;
-	transition-timing-function: ease-in;
+	transition-timing-function: cubic-bezier(0, 0, 1, 1);
 }
