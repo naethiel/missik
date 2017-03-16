@@ -29,10 +29,14 @@
 		<footer>
 		 {{ if .IsPage }}
 			{{ if .PrevInSection }}
-				<a href="{{ .PrevInSection.Permalink }}">Previous project: {{ .PrevInSection.Title }}</a>
+				<a href="{{ .PrevInSection.Permalink }}" style="background-image:/* url('./images/{{ .PrevInSection.Params.display.desktop }}'), */ linear-gradient(90deg, {{ .PrevInSection.Params.display.color1 }}, {{ .PrevInSection.Params.display.color2 }});">
+					<h5><small>Previous<br></small> {{ .PrevInSection.Title }}</h5>
+				</a>
 			{{ end }}
 			{{ if .NextInSection }}
-				<a href="{{ .NextInSection.Permalink }}">Next project: {{ .NextInSection.Title }}</a>
+				<a href="{{ .NextInSection.Permalink }}" style="background-image:/* url('./images/{{ .NextInSection.Params.display.desktop }}'),*/ linear-gradient(90deg, {{ .NextInSection.Params.display.color1 }}, {{ .NextInSection.Params.display.color2 }});">
+					<h5><small>Next<br></small>{{ .NextInSection.Title }}</h5>
+				</a>
 			{{ end }}
 		{{ end }}
 		</footer>

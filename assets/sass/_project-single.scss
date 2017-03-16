@@ -85,4 +85,85 @@
 			}
 		}
 	}
+
+	footer {
+		display: flex;
+		align-items: stretch;
+
+		a {
+			flex: 1;
+			display: flex;
+			min-height: 5rem;
+			background-position: center;
+			background-size: cover;
+			align-items: center;
+			color: white;
+			position: relative;
+			overflow: hidden;
+			padding: 0 $spacer-lg;
+
+			&:before { // this block is used as a darkening filter on top of the data-applied gradient background of the <a> block
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: transparentize($gray-darker, .35);
+				z-index: 1;
+				transition: background .5s ease;
+			}
+
+			&:after { // this is the triangle inside the block
+				content: url('../images/triangle.svg');
+				display: block;
+				position: absolute;
+				bottom: 0;
+				width: 2rem;
+				height: 2rem;
+				z-index: 3;
+				transition: transform .3s ease .2s;
+
+			}
+
+			&:hover {
+				text-decoration: none;
+				&:before {
+					background: transparentize($gray-darker, .8);
+				}
+			}
+
+			&:last-child {
+				justify-content: flex-start;
+				text-align: left;
+
+				&:after {
+					right: 0;
+					transform: rotate(180deg) translate(-100%, -100%);
+				}
+
+				&:hover:after {
+					transform: rotate(180deg) translate(0);
+				}
+			}
+
+			&:first-child {
+				justify-content: flex-end;
+				text-align: right;
+
+				&:after {
+					left: 0;
+					transform: rotate(-90deg) translate(-100%, -100%);
+				}
+
+				&:hover:after {
+					transform: rotate(-90deg) translate(0);
+				}
+			}
+
+			// making text content go over the fade effect from the :before pseudo-element
+			* { z-index: 2; }
+		}
+	}
 }

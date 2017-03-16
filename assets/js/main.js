@@ -59,9 +59,12 @@ function initNavBar() {
 		window.addEventListener("scroll", function(){
 			const landing = document.querySelector("body > header");
 			const landingHeight = landing.clientHeight;
-			console.log(landingHeight);
+
 			(window.pageYOffset > landingHeight) ? navbar.classList.add("scrolled") : navbar.classList.remove("scrolled");
 		});
+
+		// check navbar display on pageload
+
 	}
 }
 
