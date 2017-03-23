@@ -39,32 +39,24 @@ function initProjectPage() {
 
 function initSidebar() {
 	const sidebar = document.querySelector("#sidebar");
-	const sidebarOpenBtn = document.querySelector("#sidebar-open-btn");
-	const sidebarCloseBtn = document.querySelector("#sidebar-close-btn");
+	const sidebarToggleBtn = document.querySelector("#sidebar-toggle-btn");
 
-	sidebarOpenBtn.addEventListener("click", function(e) {
+	sidebarToggleBtn.addEventListener("click", function(e) {
 		e.preventDefault();
 		sidebar.classList.toggle("open");
-	});
-
-	sidebarCloseBtn.addEventListener("click", function(e) {
-		e.preventDefault();
-		sidebar.classList.toggle("open");
+		sidebarToggleBtn.classList.toggle("open");
 	});
 }
 
 function initNavBar() {
-	const navbar = document.querySelector("#main-navbar.home-navigation");
-	if (navbar) {
+	const homeNavbar = document.querySelector("#main-navbar.home-navigation");
+	if (homeNavbar) {
 		window.addEventListener("scroll", function(){
 			const landing = document.querySelector("body > header");
 			const landingHeight = landing.clientHeight;
 
-			(window.pageYOffset > landingHeight) ? navbar.classList.add("scrolled") : navbar.classList.remove("scrolled");
+			(window.pageYOffset > landingHeight) ? homeNavbar.classList.add("scrolled") : homeNavbar.classList.remove("scrolled");
 		});
-
-		// check navbar display on pageload
-
 	}
 }
 
@@ -101,8 +93,18 @@ function initLanding() {
 			opacity: [0, 1],
 			easing: "easeOutQuad",
 			complete: function(e){
-				$(document).trigger("name.loaded");
+				$(document).trigger("name:loaded");
 			}
 		})
+	});
+
+	document.querySelector("#scroll-down-icon").addEventListener("click", function(e) {
+		e.preventDefault();
+
+		const target = e.target.hash;
+
+		$("html, body").animate({
+			"scrollTop" : $(target).offset().top
+		}, 850);
 	});
 }

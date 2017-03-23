@@ -2,17 +2,19 @@
 	<a role="button" aria-label="return to home" href="{{ .Site.BaseURL }}" id="navbar-logo">
 		<img src="images/small-logo.png" alt="MISSIK">
 	</a>
-	<a href="#" id="sidebar-open-btn" role="button">
-		<img src="./images/navbar-btn.svg" alt="My works (open navigation)">
-		<span class="sr-only">My works (open navigation)</span>
+	<a href="#" id="sidebar-toggle-btn" role="button">
+		<span class="sr-only">My works (open/close navigation)</span>
 	</a>
 	<div id="sidebar">
-		<a href="#" id="sidebar-close-btn"><span class="sr-only" role="button">Close this menu</span></a>
 		<h3 class="nav-heading">My works</h3>
 		<ul role="navigation">
 		{{ $currentPage := . }}
 		{{ range $i, $page := where .Site.Pages "Type" "project" }}
-			<li><a href="{{ .RelPermalink }}" class="{{ if eq $currentPage.Title .Title }}active{{ end }}" style="transition-delay: {{ mul $i 0.1 | add 0.2 | safeCSS }}s">{{ .Title }}</a></li>
+			<li style="transition-delay: {{ mul $i 0.1 | add 0.2 | safeCSS }}s">
+				<a href="{{ .RelPermalink }}" class="{{ if eq $currentPage.Title .Title }}active{{ end }}">
+					{{ .Title }}
+				</a>
+			</li>
 		{{ end }}
 		</ul>
 	</div>
