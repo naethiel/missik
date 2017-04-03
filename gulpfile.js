@@ -4,7 +4,7 @@ var	gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	plumber = require('gulp-plumber'),
 	autoprefixer = require('gulp-autoprefixer'),
-// 	sourcemaps = require('gulp-sourcemaps'),
+	sourcemaps = require('gulp-sourcemaps'),
 	cssnano = require('gulp-cssnano');
 
 var path = {
@@ -25,15 +25,19 @@ function scripts() {
 		path.assets.js + '*'
 	])
 	.pipe(plumber())
+	.pipe(sourcemaps.init())
 	.pipe(concat("app.js"))
 	.pipe(uglify())
+	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path.static.js));
 }
 
 function styles() {
 	gulp.src(path.assets.sass + 'main.scss')
+	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer())
+	.pipe(sourcemaps.write())
 	.pipe(cssnano({
 		discardComments: {removeAll: true}
 	}))
