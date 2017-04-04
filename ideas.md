@@ -33,9 +33,9 @@
 
 ```html
 <!-- SEO -->
-<meta name="keywords" content="Portfolio, UX design, UI design, hetic, webdesigner">
-<meta name="author" content="Robin Mastromarino, Patrick Heng">
-<meta name="copyright" content="© Copyright 2016 - Robin Mastromarino" />
+<meta name="keywords" content="Portfolio, UX design, UI design, front-end developper, webdesigner">
+<meta name="author" content="Nicolas Missika">
+<meta name="copyright" content="© Copyright 2017 - Nicolas Missika" />
 
 <!-- Robots -->
 <meta name="robots" content="index, follow">
@@ -45,20 +45,20 @@
 <!-- Facebook meta -->
 <meta property="og:title" content="Robin Mastromarino | UI / UX Designer"/>
 <meta property="og:image" content="http://robinmastromarino.com/images/share/share.jpg"/>
-<meta property="og:url" content="http://robinmastromarino.com/"/>
-<meta property="og:site-name" content="Robin Mastromarino | UI / UX Designer"/>
-<meta name="description" content="Robin Mastromarino UI/UX designer and HETIC student based in Paris."/>
+<meta property="og:url" content="http://www.missik.fr/"/>
+<meta property="og:site-name" content="Nicolas Missika | UI Designer &amp; front-end developper"/>
+<meta name="description" content="Nicolas Missika, UI Designer &amp; front-end developper based in Paris."/>
 
 <!-- Twitter meta -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@cherwoood">
-<meta name="twitter:creator" content="@cherwoood">
-<meta name="twitter:title" content="Robin Mastromarino | UI / UX Designer">
-<meta name="twitter:description" content="Robin Mastromarino UI/UX designer and HETIC student based in Paris.">
+<!-- <meta name="twitter:site" content="@cherwoood">
+<meta name="twitter:creator" content="@cherwoood"> -->
+<meta name="twitter:title" content="Nicolas Missika | UI Designer / front-end developper">
+<meta name="twitter:description" content="Nicolas Missika, UI Designer &amp; front-end developper based in Paris.">
 <meta name="twitter:image:src" content="http://robinmastromarino.com/images/share/share.jpg">
 
 <!-- GOOGLE + Share -->
-<meta itemprop="name" content="Robin Mastromarino - Portfolio">
-<meta itemprop="description" content="Robin Mastromarino UI/UX designer and HETIC student based in Paris.">
+<meta itemprop="name" content="Nicolas Missika - Portfolio">
+<meta itemprop="description" content="Nicolas Missika, UI Designer &amp; front-end developper based in Paris.">
 <meta itemprop="image" content="images/share/share.png">
 ```
