@@ -1,7 +1,7 @@
 console.log("cube.js loaded");
 
 const config = {
-	active: false
+	active: true
 }
 
 // initialization
@@ -17,12 +17,14 @@ renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 
 // actually add it to the DOM
-var div = document.getElementById("webgl-background");
+if (document.getElementById("webgl-background")) {
+	var div = document.getElementById("webgl-background");
+}
 
-if (config.active) {
+if (config.active && div) {
 	div.appendChild( renderer.domElement ); // disabled while developping the rest of the site
 } else {
-	console.warn("cube.js is disabled.");
+	console.warn("cube.js is disabled on this page.");
 }
 
 /* ------------------------------------------------------- */
