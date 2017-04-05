@@ -105,16 +105,8 @@
 				transform-origin: bottom left;
 
 				@include media-breakpoint-up(lg) {
-					border-width: 20rem 0 0 20rem;
+					border-width: 32rem 0 0 32rem;
 				}
-			}
-
-			&:hover:before {
-				transform: scale(.9);
-			}
-
-			&:hover figure img {
-				transform: scale(1.05);
 			}
 		}
 
