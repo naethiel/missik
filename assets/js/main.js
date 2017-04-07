@@ -24,8 +24,8 @@ function initProjectPage() {
 	window.addEventListener("scroll", function() {
 		const windowHeight = window.innerHeight;
 
-		var scale = 1 - (window.pageYOffset * .2 / windowHeight);
-		var opacity = 1 - (window.pageYOffset * 4 / windowHeight);
+		var scale = Math.max((1 - (window.pageYOffset / 2 / windowHeight)), 0.8);
+		var opacity = Math.max((1 - (window.pageYOffset * 3 / windowHeight)), 0);
 
 		headline.setAttribute("style",
 			"transform: scale(" +  scale + ");"

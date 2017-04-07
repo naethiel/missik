@@ -7,8 +7,14 @@
 		{{ partial "nav.partial.html" . }}
 
 		<header>
-			<div class="wrapper" style="background-image: url('./images/{{ .Params.display.desktop }}'), linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});">
+			<div class="wrapper" style="background-image: linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});">
 				<h1>{{ .Title }}</h1>
+				{{ if .Params.description }}
+				<p>{{ .Params.description }}</p>
+				{{ end }}
+				<figure>
+					<img src="./images/{{ .Params.display.desktop }}" alt="">
+				</figure>
 			</div>
 		</header>
 		<section>
