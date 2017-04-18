@@ -1,11 +1,11 @@
 	<article>
-		<figure style="background: linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});" class="hidden-sm-down">
-			<img src="images/{{ .Params.display.desktop }}" alt="{{ .Title }} - illustration">
+		<figure style="background: linear-gradient(75deg, {{ .Params.gradient.color1 }}, {{ .Params.gradient.color2 }});" class="hidden-sm-down">
+			<img src="images/{{ .Slug }}/{{ .Slug }}-desktop-sm.png" alt="{{ .Title }} - illustration">
 		</figure>
 
 		<a href="{{ .RelPermalink }}" class="hidden-md-up">
-			<figure style="background: linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});">
-				<img src="images/{{ .Params.display.mobile }}" alt="{{ .Title }} - illustration">
+			<figure style="background: linear-gradient(75deg, {{ .Params.gradient.color1 }}, {{ .Params.gradient.color2 }});">
+				<img src="images/{{ .Slug }}/{{ .Slug }}-desktop-sm.png" alt="{{ .Title }} - illustration">
 			</figure>
 		</a>
 

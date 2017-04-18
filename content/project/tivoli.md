@@ -5,9 +5,8 @@ year = "2016"
 category = "Web"
 role = "Art Direction & Front-end development"
 client = "SEITOSEI"
-[display]
-mobile = "tivoli/tivoli_mobile.png"
-desktop = "tivoli/tivoli_mobile.png"
+slug = "tivoli"
+[gradient]
 color1 = "#3d7eaa"
 color2 = "#ffe47a"
 

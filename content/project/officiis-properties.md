@@ -5,9 +5,8 @@ year = "2016"
 category = "Web"
 role = "Art Direction"
 client = "SEITOSEI"
-[display]
-mobile = "zublin/zublin_mobile.png"
-desktop = "zublin/zublin_mobile.png"
+slug = "officiis"
+[gradient]
 color1 = "#16a085"
 color2 = "#f4d03f"
 

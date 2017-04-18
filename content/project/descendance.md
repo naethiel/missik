@@ -5,11 +5,10 @@ year = "2013"
 category = "Web & Mobile"
 role = "Art Direction & Conception"
 client = "Graduation project"
-[display]
-mobile = "descendance/descendance_mobile.png"
-desktop = "descendance/descendance_desktop.png" 
-color1 = "#ececec"
-color2 = "#ffffff"
+slug = "descendance"
+[gradient]
+color1 = "#66c7cf"
+color2 = "#386367"
 
 priority = 3
 +++

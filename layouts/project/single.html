@@ -17,16 +17,8 @@
 									/images/{{ .Slug }}/{{ .Slug }}-mobile.png 800w" media="(max-width: 768px)">
 					<source srcset="/images/{{ .Slug }}/{{ .Slug }}-desktop-sm.png 1000w,
 									/images/{{ .Slug }}/{{ .Slug }}-desktop.png 2000w" media="(min-width: 769px)">
-					<img src="/images/{{ .Params.display.mobile }}-sm.png" alt="{{ .Slug }}">
+					<img src="/images/{{ .Params.gradient.mobile }}-sm.png" alt="{{ .Slug }}">
 				</picture>
-				<!-- <figure>
-					<img
-						srcset="./images/{{ .Params.display.mobile }}-sm.png 350w,
-								./images/{{ .Params.display.mobile}}.png 700w,
-								./images/{{ .Params.display.desktop }}-sm.png 800w,
-								./images/{{ .Params.display.desktop }}.png 1500w"
-					alt="">
-				</figure> -->
 			</div>
 		</header>
 		<section>
@@ -47,12 +39,12 @@
 		<footer>
 		 {{ if .IsPage }}
 			{{ if .PrevInSection }}
-				<a href="{{ .PrevInSection.Permalink }}" style="background-image:/* url('./images/{{ .PrevInSection.Params.display.desktop }}'), */ linear-gradient(90deg, {{ .PrevInSection.Params.display.color1 }}, {{ .PrevInSection.Params.display.color2 }});">
+				<a href="{{ .PrevInSection.Permalink }}" style="background-image:/* url('./images/{{ .PrevInSection.Params.gradient.desktop }}'), */ linear-gradient(90deg, {{ .PrevInSection.Params.gradient.color1 }}, {{ .PrevInSection.Params.gradient.color2 }});">
 					<h5><small>Previous<br></small> {{ .PrevInSection.Title }}</h5>
 				</a>
 			{{ end }}
 			{{ if .NextInSection }}
-				<a href="{{ .NextInSection.Permalink }}" style="background-image:/* url('./images/{{ .NextInSection.Params.display.desktop }}'),*/ linear-gradient(90deg, {{ .NextInSection.Params.display.color1 }}, {{ .NextInSection.Params.display.color2 }});">
+				<a href="{{ .NextInSection.Permalink }}" style="background-image:/* url('./images/{{ .NextInSection.Params.gradient.desktop }}'),*/ linear-gradient(90deg, {{ .NextInSection.Params.gradient.color1 }}, {{ .NextInSection.Params.gradient.color2 }});">
 					<h5><small>Next<br></small>{{ .NextInSection.Title }}</h5>
 				</a>
 			{{ end }}

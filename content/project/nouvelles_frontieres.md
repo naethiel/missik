@@ -6,9 +6,8 @@ year = "2013"
 category = "Web"
 role = "Art Direction"
 client = "Havas Worldwide"
-[display]
-mobile = "nouvelles_frontieres/NF_mobile.png"
-desktop = "nouvelles_frontieres/NF_mobile.png"
+slug = "nouvelles_frontieres"
+[gradient]
 color1 = "#480048"
 color2 = "#c04848"
 
