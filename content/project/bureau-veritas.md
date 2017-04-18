@@ -1,15 +1,15 @@
 +++
 title = "Bureau Veritas"
+description = "Layout for annual report for Bureau Veritas."
 type = "project"
 year = "2017"
 category = "Web"
 role = "Design"
 client = "SEITOSEI"
-[display]
-mobile = "bureau_veritas/bureauveritas_mobile.png"
-desktop = "bureau_veritas/bureauveritas_mobile.png"
-color1 = "#c04848"
-color2 = "#480048"
+slug = "bureau_veritas"
+[gradient]
+    color1 = "#c04848"
+    color2 = "#480048"
 
 
 priority = 1

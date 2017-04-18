@@ -6,22 +6,25 @@
 		}
 	}
 
-	> header .wrapper {
+	.wrapper {
 		height: 100%;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: $spacer-xl $spacer-lg 0;
+		overflow: hidden;
 
-		@include media-breakpoint-up(lg) {
-		};
+		@each $breakpoint in map-keys($grid-breakpoints) {
+			@include media-breakpoint-up($breakpoint) {
+				padding: $spacer-xl (map-get($grid-gutter-widths,  $breakpoint) / 2) 0;
+			}
+		}
 
 		h1, p {
 			margin-bottom: $spacer-lg;
 		}
 
-		figure {
+		figure, picture {
 			margin: 0;
 			width: 100%;
 			flex: 1;
@@ -34,6 +37,11 @@
 				max-width: 100%;
 				object-fit: contain;
 				object-position: center bottom;
+
+				@include media-breakpoint-up(lg) {
+					object-fit: contain;
+					object-position: center bottom;
+				};
 			}
 		}
 	}

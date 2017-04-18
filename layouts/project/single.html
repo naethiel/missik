@@ -7,14 +7,26 @@
 		{{ partial "nav.partial.html" . }}
 
 		<header>
-			<div class="wrapper" style="background-image: linear-gradient(75deg, {{ .Params.display.color1 }}, {{ .Params.display.color2 }});">
+			<div class="wrapper" style="background-image: linear-gradient(75deg, {{ .Params.gradient.color1 }}, {{ .Params.gradient.color2 }});">
 				<h1>{{ .Title }}</h1>
 				{{ if .Params.description }}
-				<p>{{ .Params.description }}</p>
+				<p class="hidden-sm-down">{{ .Params.description }}</p>
 				{{ end }}
-				<figure>
-					<img src="./images/{{ .Params.display.desktop }}" alt="">
-				</figure>
+				<picture>
+					<source srcset="/images/{{ .Slug }}/{{ .Slug }}-mobile-sm.png 400w,
+									/images/{{ .Slug }}/{{ .Slug }}-mobile.png 800w" media="(max-width: 768px)">
+					<source srcset="/images/{{ .Slug }}/{{ .Slug }}-desktop-sm.png 1000w,
+									/images/{{ .Slug }}/{{ .Slug }}-desktop.png 2000w" media="(min-width: 769px)">
+					<img src="/images/{{ .Params.display.mobile }}-sm.png" alt="{{ .Slug }}">
+				</picture>
+				<!-- <figure>
+					<img
+						srcset="./images/{{ .Params.display.mobile }}-sm.png 350w,
+								./images/{{ .Params.display.mobile}}.png 700w,
+								./images/{{ .Params.display.desktop }}-sm.png 800w,
+								./images/{{ .Params.display.desktop }}.png 1500w"
+					alt="">
+				</figure> -->
 			</div>
 		</header>
 		<section>
