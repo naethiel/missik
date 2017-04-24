@@ -60,22 +60,9 @@ gulp.task('vendors', function(){
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
 
-gulp.task('scripts-from-ftp', function(){
-	setTimeout(scripts, 1000);
-});
-
-gulp.task('styles-from-ftp', function() {
-	setTimeout(styles, 1000);
-});
-
 gulp.task('watch', function() {
 	gulp.watch([path.assets.sass + '*.scss'], ['styles']);
 	gulp.watch([path.assets.js + '*.js'], ['scripts']);
-});
-
-gulp.task('watch-from-ftp', function(){
-	gulp.watch([path.assets.sass + '*.scss'], ['styles-from-ftp']);
-	gulp.watch([path.assets.js + '*.js'], ['scripts-from-ftp']);
 });
 
 gulp.task('build', ['scripts', 'styles', 'vendors']);
