@@ -79,8 +79,7 @@ $(function Cubes() {
 		mouseY = ( event.clientY - window.innerHeight / 2 ) / 10;
 
 		mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1; // [ -1, +1 ]
-		mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
+		mouse.y = - ( (event.clientY + window.scrollY) / window.innerHeight ) * 2 + 1;
 	}
 
 	/* ------------------------------------------------------- */

@@ -3,15 +3,18 @@ $(function Landing() {
 	console.log("Landing loaded");
 
 	const isHome = document.querySelector("body").classList.contains("home");
-	if (!isHome) {
-		return;
-	}
+	if (!isHome) { return; }
+
+
+	const $document = $(document);
+	const scrollDownButton = document.querySelector("#scroll-down-icon");
+
+
 
 	anime({
 		targets: "#logo polygon",
 		opacity: [0, 1],
 		translateX: ["100px", "0px"],
-		// loop: "true",
 		duration: 1000,
 		rotate: function(el, index){
 			if (index % 2 === 0) {

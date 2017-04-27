@@ -1,5 +1,6 @@
 var	gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
+	babel = require('gulp-babel'),
 	concat = require('gulp-concat'),
 	sass = require('gulp-sass'),
 	plumber = require('gulp-plumber'),
@@ -26,8 +27,13 @@ function scripts() {
 	])
 	.pipe(plumber())
 	.pipe(sourcemaps.init())
+	.pipe(babel({
+		presets: ["es2015"]
+	}))
 	.pipe(concat("app.js"))
-	.pipe(uglify())
+	.pipe(uglify().on('error', function(error){
+		console.error(err);
+	}))
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path.static.js));
 }
