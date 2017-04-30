@@ -4,3 +4,4 @@ public/
 static/css/*
 static/js/*
 static/fonts/*
+.DS_Store
