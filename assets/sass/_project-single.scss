@@ -1,8 +1,8 @@
 .project-single {
 
 	> header {
-		@include media-breakpoint-down(md) {
-			height: 75vh;
+		@include media-breakpoint-down(sm) {
+			height: 75%;
 		}
 	}
 
@@ -16,16 +16,23 @@
 
 		@each $breakpoint in map-keys($grid-breakpoints) {
 			@include media-breakpoint-up($breakpoint) {
-				padding: $spacer-xl (map-get($grid-gutter-widths,  $breakpoint) / 2) 0;
+				padding: $spacer-xl * 1.5 (map-get($grid-gutter-widths,  $breakpoint) / 2) 0;
 			}
 		}
 
-		h1, p {
-			margin-bottom: $spacer-lg;
+		@include media-breakpoint-up(md){
+			h1, p {
+				margin-bottom: $spacer-lg;
+			}
 		}
 
 		h1 {
 			hyphens: auto;
+			font-size: 1.5rem;
+
+			@include media-breakpoint-up(md){
+				font-size: $font-size-h1;
+			};
 		}
 
 		figure, picture {
@@ -35,18 +42,9 @@
 			display: flex;
 			justify-content: center;
 			align-items: flex-start;
-
-			img {
-				height: 100%;
-				max-width: 100%;
-				object-fit: contain;
-				object-position: center bottom;
-
-				@include media-breakpoint-up(lg) {
-					object-fit: contain;
-					object-position: center bottom;
-				};
-			}
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center bottom;
 		}
 	}
 

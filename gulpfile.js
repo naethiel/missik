@@ -13,15 +13,50 @@ var path = {
 		'sass' : './assets/sass/',
 		'js' : './assets/js/'
 	},
-	'vendors' : './node_modules/',
+	'vendors' : {
+		npm: './node_modules/',
+		bower: './bower_components/'
+	},
 	'static' : {
 		'css' : './static/css/',
 		'maps' : './static/maps/',
-		'js' : './static/js/'
+		'js' : './static/js/',
+		'fonts' : './static/fonts/'
 	}
 }
 
-function scripts() {
+gulp.task('vendors', function(){
+	gulp.src([
+		path.vendors.npm + 'jquery/dist/jquery.js',
+		path.vendors.npm + 'three/build/three.js',
+		path.vendors.npm + 'animejs/anime.js'
+	])
+	.pipe(plumber())
+	.pipe(concat('vendors.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest(path.static.js));
+});
+
+gulp.task('fonts', function(){
+	gulp.src([
+		path.vendors.bower + 'font-awesome/fonts/*'
+	])
+	.pipe(gulp.dest(path.static.fonts))
+});
+
+gulp.task('styles', function() {
+	gulp.src(path.assets.sass + 'main.scss')
+	.pipe(sourcemaps.init())
+	.pipe(sass().on('error', sass.logError))
+	.pipe(autoprefixer())
+	.pipe(sourcemaps.write())
+	.pipe(cssnano({
+		discardComments: {removeAll: true}
+	}))
+	.pipe(gulp.dest(path.static.css))
+});
+
+gulp.task('scripts', function() {
 	gulp.src([
 		path.assets.js + '*'
 	])
@@ -36,41 +71,13 @@ function scripts() {
 	}))
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path.static.js));
-}
-
-function styles() {
-	gulp.src(path.assets.sass + 'main.scss')
-	.pipe(sourcemaps.init())
-	.pipe(sass().on('error', sass.logError))
-	.pipe(autoprefixer())
-	.pipe(sourcemaps.write())
-	.pipe(cssnano({
-		discardComments: {removeAll: true}
-	}))
-	.pipe(gulp.dest(path.static.css))
-}
-
-
-gulp.task('vendors', function(){
-	gulp.src([
-		path.vendors + 'jquery/dist/jquery.js',
-		path.vendors + 'three/build/three.js',
-		path.vendors + 'animejs/anime.js'
-	])
-	.pipe(plumber())
-	.pipe(concat('vendors.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest(path.static.js));
 });
 
-gulp.task('styles', styles);
-gulp.task('scripts', scripts);
-
 gulp.task('watch', function() {
-	gulp.watch([path.assets.sass + '*.scss'], ['styles']);
+	gulp.watch([path.assets.sass + '*' ], ['styles']);
 	gulp.watch([path.assets.js + '*.js'], ['scripts']);
 });
 
-gulp.task('build', ['scripts', 'styles', 'vendors']);
+gulp.task('build', ['scripts', 'styles', 'fonts', 'vendors']);
 
 gulp.task('default', ['build']);

@@ -1,0 +1,20 @@
+{
+  "name": "missik.fr-2016",
+  "description": "New website for Nicolas Missika's portfolio",
+  "main": "gulpfile.js",
+  "authors": [
+    "Nicolas Missika"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}

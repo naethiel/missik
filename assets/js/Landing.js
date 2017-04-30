@@ -8,8 +8,7 @@ $(function Landing() {
 
 	const $document = $(document);
 	const scrollDownButton = document.querySelector("#scroll-down-icon");
-
-
+	const name = document.querySelectorAll('#name-block span');
 
 	anime({
 		targets: "#logo polygon",
@@ -35,16 +34,9 @@ $(function Landing() {
 	});
 
 	$(document).on("logo:loaded", function(){
-		anime({
-			targets: "#name",
-			translateY: ["10px", "0px"],
-			duration: 1000,
-			opacity: [0, 1],
-			easing: "easeOutQuad",
-			complete: function(e){
-				$(document).trigger("name:loaded");
-			}
-		})
+		name.forEach((el, index) => {
+			setTimeout(() => { el.classList.add("animate-in") }, index * 500)
+		});
 	});
 
 	document.querySelector("#scroll-down-icon").addEventListener("click", function(e) {

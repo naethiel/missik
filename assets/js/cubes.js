@@ -3,7 +3,14 @@ $(function Cubes() {
 	console.log("Cubes loaded");
 
 	const config = {
-		active: true
+		active: false, 
+		page: "home"
+	}
+	const isActivePage = document.querySelector("body").classList.contains(config.page);
+
+	if (!isActivePage || !config.active) {
+ 		console.log("3D WebGL cubes disabled on this page.");
+		return;
 	}
 
 	// initialization
@@ -23,10 +30,10 @@ $(function Cubes() {
 		var div = document.getElementById("webgl-background");
 	}
 
-	if (config.active && div) {
+	if (div) {
 		div.appendChild( renderer.domElement ); // disabled while developping the rest of the site
 	} else {
-		console.warn("cube.js is disabled on this page.");
+		console.warn("cubes cannot load because container element is absent.");
 	}
 
 	/* ------------------------------------------------------- */

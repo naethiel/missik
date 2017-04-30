@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en-US">
 	<head>
 		{{ partial "head.partial.html" . }}
@@ -7,18 +8,34 @@
 		{{ partial "nav.partial.html" . }}
 
 		<header>
+			<style media="screen" scoped>
+			@media (max-width: 450px) {
+				figure {
+					background-image: url('./images/{{ .Slug }}/{{ .Slug }}-mobile-sm.png');
+				}
+			}
+			@media (min-width: 451px) and (max-width: 768px) {
+				figure {
+					background-image: url('./images/{{ .Slug }}/{{ .Slug }}-mobile.png');
+				}
+			}
+			@media (min-width: 769px) and (max-width: 1000px) {
+				figure {
+					background-image: url('./images/{{ .Slug }}/{{ .Slug }}-desktop-sm.png');
+				}
+			}
+			@media (min-width: 1000px) {
+				figure {
+					background-image: url('./images/{{ .Slug }}/{{ .Slug }}-desktop.png');
+				}
+			}
+			</style>
 			<div class="wrapper" style="background-image: linear-gradient(75deg, {{ .Params.gradient.color1 }}, {{ .Params.gradient.color2 }});">
 				<h1>{{ .Title }}</h1>
 				{{ if .Params.description }}
 				<p class="hidden-sm-down">{{ .Params.description }}</p>
 				{{ end }}
-				<picture>
-					<source srcset="/images/{{ .Slug }}/{{ .Slug }}-mobile-sm.png 400w,
-									/images/{{ .Slug }}/{{ .Slug }}-mobile.png 800w" media="(max-width: 768px)">
-					<source srcset="/images/{{ .Slug }}/{{ .Slug }}-desktop-sm.png 1000w,
-									/images/{{ .Slug }}/{{ .Slug }}-desktop.png 2000w" media="(min-width: 769px)">
-					<img src="/images/{{ .Params.gradient.mobile }}-sm.png" alt="{{ .Slug }}">
-				</picture>
+				<figure></figure>
 			</div>
 		</header>
 		<section>
