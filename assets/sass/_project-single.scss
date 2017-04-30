@@ -58,6 +58,7 @@
 
 		> article, > section, > header {
 			@include make-row();
+			margin-bottom: $spacer-lg; 
 		}
 
 		> header {
@@ -82,6 +83,7 @@
 
 		> article {
 			text-align: justify;
+			justify-content: center;
 
 			@include media-breakpoint-up(sm) {
 				text-align: left;
@@ -90,6 +92,14 @@
 			section {
 				@include make-col-ready();
 				@include make-col(12);
+
+				@include media-breakpoint-up(md){
+					@include make-col(9);
+				};
+
+				@include media-breakpoint-up(lg){
+					@include make-col(8);
+				};
 			}
 		}
 	}

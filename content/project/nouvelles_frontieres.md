@@ -15,4 +15,8 @@ color2 = "#c04848"
 priority = 0
 +++
 
-Sur base de la maquette ayant servi à la compétition, déclinaisons et modifications pour la refonte du nouveau site de Nouvelles Frontières. Réalisé chez Havas Worldwide Paris (ex-Euro RSCG C&O).
+Based on the layout which won the competition, made by the agency, I made all modifications and sub-pages for the then-new site of Nouvelles Frontières. Made while I was working at _Havas WorldWide Paris_.
+
+Creation of various page templates, most notably product pages, funnel, etc.
+
+These designs were then sent to the client, who handled integration and development on their side.
