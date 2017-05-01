@@ -1,5 +1,5 @@
 $(function Header() {
-
+	console.log("Header loaded");
 	// forcing header resize through JS because vh unit buggy Safari is getting on my nerves.
 
 	const header = document.querySelector("body > header");

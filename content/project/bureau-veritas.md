@@ -2,6 +2,7 @@
 title = "Bureau Veritas"
 description = "Layout for annual report for Bureau Veritas."
 type = "project"
+draft = "true"
 year = "2017"
 category = "Web"
 role = "Design"
