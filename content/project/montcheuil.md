@@ -1,4 +1,5 @@
 +++
+weight = 20
 title = "Fondation de Montcheuil"
 description = "Full redesign of this NGO's website"
 type = "project"

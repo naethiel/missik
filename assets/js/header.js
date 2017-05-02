@@ -12,7 +12,6 @@ $(function Header() {
 		const viewportWidth = $window.width();
 
 		if (viewportWidth < 768 && !isHome) {
-			console.log(viewportWidth);
 			header.style.height = `${viewportHeight * .75}px`;
 		} else {
 			header.style.height = `${viewportHeight}px`;

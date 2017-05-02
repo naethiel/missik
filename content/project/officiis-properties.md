@@ -1,4 +1,5 @@
 +++
+weight = 30
 title = "Officiis Properties"
 type = "project"
 year = "2016"

@@ -3,7 +3,7 @@ $(function Cubes() {
 	console.log("Cubes loaded");
 
 	const config = {
-		active: false, 
+		active: true,
 		page: "home"
 	}
 	const isActivePage = document.querySelector("body").classList.contains(config.page);
@@ -12,18 +12,20 @@ $(function Cubes() {
  		console.log("3D WebGL cubes disabled on this page.");
 		return;
 	}
+	// props
+	const $window = $(window);
 
 	// initialization
 	var scene = new THREE.Scene();
 
 	// create camera with a position
-	var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 4000 );
+	var camera = new THREE.PerspectiveCamera( 75, $window.width() / $window.height(), 1, 4000 );
 	camera.position.set( 0, 0, 500 );
 
 	// create a renderer (the canvas)
 	var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 	renderer.setPixelRatio( window.devicePixelRatio );
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( $window.width(), $window.height() );
 
 	// actually add it to the DOM
 	if (document.getElementById("webgl-background")) {
@@ -41,9 +43,9 @@ $(function Cubes() {
 	window.addEventListener( 'resize', onWindowResize, false );
 
 	function onWindowResize() {
-		camera.aspect = window.innerWidth / window.innerHeight;
+		camera.aspect = $window.width() / $window.height();
 		camera.updateProjectionMatrix();
-		renderer.setSize( window.innerWidth, window.innerHeight );
+		renderer.setSize( $window.width(), $window.height() );
 	}
 	var mouse = new THREE.Vector2();
 	var mouseX = 0;
@@ -61,11 +63,11 @@ $(function Cubes() {
 		if ( event.touches.length == 1 ) {
 			//event.preventDefault();
 
-			mouseX = ( event.touches[0].pageX - (window.innerWidth / 2) ) / 10;
-			mouseY = ( event.touches[0].pageY - (window.innerWidth / 2) ) / 10;
+			mouseX = ( event.touches[0].pageX - ($window.width() / 2) ) / 10;
+			mouseY = ( event.touches[0].pageY - ($window.width() / 2) ) / 10;
 
-			mouse.x = ( event.touches[0].pageX / window.innerWidth ) * 2 - 1;
-			mouse.y = - ( event.touches[0].pageY / window.innerHeight ) * 2 + 1;
+			mouse.x = ( event.touches[0].pageX / $window.width() ) * 2 - 1;
+			mouse.y = - ( event.touches[0].pageY / $window.height() ) * 2 + 1;
 		}
 	}
 
@@ -73,20 +75,20 @@ $(function Cubes() {
 		if ( event.touches.length == 1 ) {
 			//event.preventDefault();
 
-			mouseX = ( event.touches[0].pageX - (window.innerWidth / 2) ) / 10;
-			mouseY = ( event.touches[0].pageY - (window.innerWidth / 2) ) / 10;
+			mouseX = ( event.touches[0].pageX - ($window.width() / 2) ) / 10;
+			mouseY = ( event.touches[0].pageY - ($window.width() / 2) ) / 10;
 
-			mouse.x = ( event.touches[0].pageX / window.innerWidth ) * 2 - 1;
-			mouse.y = - ( event.touches[0].pageY / window.innerHeight ) * 2 + 1;
+			mouse.x = ( event.touches[0].pageX / $window.width() ) * 2 - 1;
+			mouse.y = - ( event.touches[0].pageY / $window.height() ) * 2 + 1;
 		}
 	}
 
 	function onDocumentMouseMove( event ) {
-		mouseX = ( event.clientX - window.innerWidth / 2 ) / 10; // [ -innerWidth/ 4, +innerWidth/ 4 ]
-		mouseY = ( event.clientY - window.innerHeight / 2 ) / 10;
+		mouseX = ( event.clientX - $window.width() / 2 ) / 10; // [ -innerWidth/ 4, +innerWidth/ 4 ]
+		mouseY = ( event.clientY - $window.height() / 2 ) / 10;
 
-		mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1; // [ -1, +1 ]
-		mouse.y = - ( (event.clientY + window.scrollY) / window.innerHeight ) * 2 + 1;
+		mouse.x = ( event.clientX / $window.width() ) * 2 - 1; // [ -1, +1 ]
+		mouse.y = - ( (event.clientY + window.scrollY) / $window.height() ) * 2 + 1;
 	}
 
 	/* ------------------------------------------------------- */

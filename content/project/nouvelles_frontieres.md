@@ -1,4 +1,5 @@
 +++
+weight = 50
 title = "Nouvelles Frontières"
 description = "Direction artistique pour la création des maquettes du nouveau site de Nouvelles Frontières."
 type = "project"

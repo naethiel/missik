@@ -1,4 +1,5 @@
 +++
+weight = 60
 title = "Descendance"
 type = "project"
 year = "2013"
@@ -12,11 +13,10 @@ color2 = "#386367"
 
 priority = 3
 +++
+Game-design and art direction for a multi-player browser and mobile online game in which players compete for the control of their city.
 
-Game-design et conception graphique pour un jeu multi-joueur dans lequel les joueurs luttent entre eux pour le contrôle de la ville.
+Background is inspired by Aarklash, from Rackham.
 
-Univers librement inspiré de l'univers d'Aarklash créé par Rackham.
+UI design, print design for a beautiful book containing background about the game, mostly who are the 3 main factions and why they are at war.
 
-UI design, édition beau livre, motion design.
-
-L'interface du jeu sur mobile comprenait notamment une partie en réalité augmentée où le joueur pouvait utiliser la caméra de son appareil pour visualiser les ressources à collecter  autour de lui dans l'espace urbain.
+The UI on mobile includes an Augmented Reality part where the player can use his camera to collect resources around him in the city while he wanders around or fight other players he passes by.

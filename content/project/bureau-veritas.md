@@ -1,4 +1,5 @@
 +++
+weight = 8
 title = "Bureau Veritas"
 description = "Layout for annual report for Bureau Veritas."
 type = "project"
